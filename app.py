@@ -5,7 +5,7 @@ from flask import Flask, render_template, request, jsonify, send_from_directory
 from flask_cors import CORS
 import os
 import json
-import whisper
+# import whisper
 import AI_Skin_Analysis as skin_ai
 import requests
 import tempfile
@@ -555,15 +555,16 @@ def get_default_products():
 load_products_from_json()
 
 # Load Whisper model once at startup
-print("🔄 Loading Whisper model...")
-try:
-    model = whisper.load_model("small.en")
-    print("✅ Whisper model loaded!")
-except Exception as e:
-    print(f"❌ Failed to load Whisper model: {e}")
-    print("⚠️ Make sure you have installed: pip install openai-whisper")
-    print("⚠️ Also ensure ffmpeg is installed: brew install ffmpeg (on Mac)")
-    model = None
+# print("🔄 Loading Whisper model...")
+# try:
+#     model = whisper.load_model("small.en")
+#     print("✅ Whisper model loaded!")
+# except Exception as e:
+#     print(f"❌ Failed to load Whisper model: {e}")
+#     print("⚠️ Make sure you have installed: pip install openai-whisper")
+#     print("⚠️ Also ensure ffmpeg is installed: brew install ffmpeg (on Mac)")
+#     model = None
+model = None
 
 @app.route("/analyze-audio", methods=["POST"])
 def analyze_audio():
@@ -584,25 +585,25 @@ def analyze_audio():
         print(f"📊 File size: {os.path.getsize(temp_path)} bytes")
         
         # Check if model is loaded
-        if model is None:
-            raise Exception("Whisper model not loaded")
+        # if model is None:
+        #     raise Exception("Whisper model not loaded")
         
         # Transcribe audio using Whisper
         # Try local Whisper first, fallback to OpenAI API if it fails
         print("🔄 Starting transcription...")
         
         recognized_text = ""
+        # try:
+        #     # Try local Whisper with minimal parameters to avoid tokenizer issues
+        #     result = model.transcribe(temp_path)
+        #     recognized_text = result["text"].strip()
+        #     print(f"✅ Local Whisper transcription successful")
+        # except (ValueError, Exception) as whisper_error:
+        #     print(f"⚠️ Local Whisper failed: {whisper_error}")
+        #     print("🔄 Falling back to OpenAI Whisper API...")
+        
+        # Fallback to OpenAI API using direct HTTP request (avoids library version issues)
         try:
-            # Try local Whisper with minimal parameters to avoid tokenizer issues
-            result = model.transcribe(temp_path)
-            recognized_text = result["text"].strip()
-            print(f"✅ Local Whisper transcription successful")
-        except (ValueError, Exception) as whisper_error:
-            print(f"⚠️ Local Whisper failed: {whisper_error}")
-            print("🔄 Falling back to OpenAI Whisper API...")
-            
-            # Fallback to OpenAI API using direct HTTP request (avoids library version issues)
-            try:
                 api_key = os.getenv("OPENAI_API_KEY")
                 if not api_key or api_key == "YOUR_OPENAI_API_KEY":
                     raise Exception("OPENAI_API_KEY not set in .env file")
@@ -3790,11 +3791,11 @@ def format_youcam_data_as_text(youcam_data, language):
 # -----------------------------
 @app.route("/health", methods=["GET"])
 def health():
-    """Check if server and Whisper model are ready"""
+    """Check if server is ready"""
     return jsonify({
         "status": "ok",
-        "whisper_loaded": model is not None,
-        "message": "Server is running" if model else "Server running but Whisper model not loaded"
+        # "whisper_loaded": model is not None,
+        "message": "Server is running"
     })
 
 # -----------------------------
