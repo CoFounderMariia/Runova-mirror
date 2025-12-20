@@ -1,0 +1,245 @@
+{
+  "products": [
+    {
+      "number": "1",
+      "name": "CeraVe Foaming Facial Cleanser",
+      "url": "https://www.amazon.com/CeraVe-Hyaluronic-Ceramides-Niacinamide-Non-Drying/dp"
+    },
+    {
+      "number": "2",
+      "name": "3. CeraVe Hydrating Facial Cleanser",
+      "url": "https://www.amazon.com/CeraVe-Hydrating-Facial-Cleanser-Fragrance/dp/B01MSS"
+    },
+    {
+      "number": "4",
+      "name": "CeraVe Acne Control Cleanser (2% Salicylic Acid)",
+      "url": "https://www.amazon.com/CeraVe-Treatment-Salicylic-Purifying-Comedogenic/dp/B0"
+    },
+    {
+      "number": "5",
+      "name": "La Roche-Posay Toleriane Hydrating Gentle Cleanser",
+      "url": "https://www.amazon.com/Roche-Posay-Toleriane-Hydrating-Gentle-Cleanser/dp/B01"
+    },
+    {
+      "number": "6",
+      "name": "La Roche-Posay Effaclar Gel Cleanser",
+      "url": "https://www.amazon.com/Roche-Posay-Effaclar-Medicated-Acne-Cleanser/dp/B00LO"
+    },
+    {
+      "number": "7",
+      "name": "Vanicream Gentle Facial Cleanser",
+      "url": "https://www.amazon.com/Vanicream-Gentle-Cleanser-sensitive-Dispenser/dp/B00QY"
+    },
+    {
+      "number": "8",
+      "name": "Neutrogena Ultra Gentle Hydrating Cleanser",
+      "url": "https://www.amazon.com/Neutrogena-Hydrating-Sensitive-Cleanses-Soap-Free/dp/B"
+    },
+    {
+      "number": "9",
+      "name": "Neutrogena Oil-Free Acne Wash (SA)",
+      "url": "https://www.amazon.com/sspa/click?ie=UTF8&spc=MTo4NzExMDA4MTMwMDk3Nj"
+    },
+    {
+      "number": "10",
+      "name": "Cetaphil Daily Facial Cleanser",
+      "url": "https://www.amazon.com/sspa/click?ie=UTF8&spc=MTo5ODYxMzcyNTMxNDgwNzo"
+    },
+    {
+      "number": "11",
+      "name": "Paula\u2019s Choice Pore Normalizing Cleanser",
+      "url": "https://www.amazon.com/Paulas-Choice-CLEAR-Cleanser-Breakouts-Blackheads-1-"
+    },
+    {
+      "number": "11",
+      "name": "CeraVe PM Facial Moisturizing Lotion",
+      "url": "https://www.amazon.com/CeraVe-Facial-Moisturizing-Lotion-Lightweight/dp/B00365D"
+    },
+    {
+      "number": "14",
+      "name": "La Roche-Posay Toleriane Double Repair Face Moisturizer",
+      "url": "https://www.amazon.com/Roche-Posay-Toleriane-Double-Repair-Moisturizer/dp/B01"
+    },
+    {
+      "number": "15",
+      "name": "La Roche-Posay Lipikar Balm AP+",
+      "url": "https://www.amazon.com/Roche-Posay-Lipikar-Intense-Repair-Cream/dp/B003QXZ"
+    },
+    {
+      "number": "16",
+      "name": "Vanicream Moisturizing Cream",
+      "url": "https://www.amazon.com/Vanicream-Moisturizer-Hyaluronic-pH-Balanced-Dermatolo"
+    },
+    {
+      "number": "17",
+      "name": "Neutrogena Hydro Boost Gel Cream",
+      "url": "https://www.amazon.com/sspa/click?ie=UTF8&spc=MTo4MTU1Njk2MzQ4OTIzMjA2"
+    },
+    {
+      "number": "18",
+      "name": "Cetaphil Moisturizing Lotion",
+      "url": "https://www.amazon.com/sspa/click?ie=UTF8&spc=MToxODUwODk2NzQ3MTk0NTo"
+    },
+    {
+      "number": "19",
+      "name": "Avene Tolerance Control Soothing Skin Recovery Cream",
+      "url": "https://www.amazon.com/Avene-Hypersensitive-sensations-discomfort-Fragrance-Fr"
+    },
+    {
+      "number": "20",
+      "name": "First Aid Beauty Ultra Repair Cream",
+      "url": "https://www.amazon.com/sspa/click?ie=UTF8&spc=MTo3OTM4OTc2NjQwODM5MjY"
+    },
+    {
+      "number": "21",
+      "name": "EltaMD UV Clear SPF 46",
+      "url": "https://www.amazon.com/EltaMD-Acne-Prone-Mineral-Based-Dermatologist-Recom"
+    },
+    {
+      "number": "22",
+      "name": "EltaMD UV Daily SPF 40",
+      "url": "https://www.amazon.com/EltaMD-Sunscreen-Moisturizer-Hyaluronic-Hydrating/dp/B0"
+    },
+    {
+      "number": "23",
+      "name": "La Roche-Posay Anthelios Melt-In Milk SPF 60",
+      "url": "https://www.amazon.com/Roche-Posay-Anthelios-Melt-Sunscreen-Milk/dp/B002CML"
+    },
+    {
+      "number": "24",
+      "name": "La Roche-Posay Anthelios Mineral SPF 50",
+      "url": "https://www.amazon.com/Roche-Posay-Anthelios-Mineral-Sunscreen-Gentle/dp/B07"
+    },
+    {
+      "number": "25",
+      "name": "CeraVe Hydrating Mineral Sunscreen SPF 50",
+      "url": "https://www.amazon.com/CeraVe-Mineral-Sunscreen-Titanium-Sensitive/dp/B07KL7"
+    },
+    {
+      "number": "26",
+      "name": "Supergoop Unseen Sunscreen SPF 40",
+      "url": "https://www.amazon.com/Supergoop-Mini-Unseen-Sunscreen-0-68/dp/B0CBT1TQF"
+    },
+    {
+      "number": "27",
+      "name": "Supergoop Play Everyday Lotion SPF 50",
+      "url": "https://www.amazon.com/Supergoop-PLAY-Everyday-SPF-Lotion/dp/B087H5FFGK/r"
+    },
+    {
+      "number": "28",
+      "name": "Neutrogena Ultra Sheer Dry-Touch SPF 55",
+      "url": "https://www.amazon.com/Neutrogena-Dry-Touch-Resistant-Non-Greasy-Sunscreen/d"
+    },
+    {
+      "number": "29",
+      "name": "Neutrogena Hydro Boost Water Gel Lotion SPF 50",
+      "url": "https://www.amazon.com/sspa/click?ie=UTF8&spc=MTo3NTgwNjQyMzUxNzQ5NTE"
+    },
+    {
+      "number": "30",
+      "name": "Blue Lizard Sensitive Mineral SPF 50",
+      "url": "https://www.amazon.com/Blue-Lizard-Sensitive-Mineral-Sunscreen/dp/B084ZP848Y/"
+    },
+    {
+      "number": "31",
+      "name": "CeraVe Skin Renewing Retinol Serum",
+      "url": "https://www.amazon.com/CeraVe-Retinol-Smoothing-Brightening-Fragrance/dp/B07X"
+    },
+    {
+      "number": "32",
+      "name": "La Roche-Posay Effaclar Adapalene 0.1% Gel (retinoid)",
+      "url": "https://www.amazon.com/Roche-Posay-Effaclar-Adapalene-Treatment-Prescription-S"
+    },
+    {
+      "number": "33",
+      "name": "Differin Adapalene 0.1% Gel",
+      "url": "https://www.amazon.com/Differin-Adapalene-prescription-strength-treatment/dp/B07Z"
+    },
+    {
+      "number": "34",
+      "name": "Paula\u2019s Choice Skin Perfecting 2% BHA Liquid",
+      "url": "https://www.amazon.com/Paulas-Choice-SKIN-PERFECTING-Exfoliant-Facial-Black"
+    },
+    {
+      "number": "35",
+      "name": "The Ordinary Niacinamide 10% + Zinc 1%",
+      "url": "https://www.amazon.com/Ordinary-Niacinamide-10-Zinc-30ml/dp/B01MDTVZTZ/ref="
+    },
+    {
+      "number": "36",
+      "name": "The Ordinary Hyaluronic Acid 2% + B5",
+      "url": "https://www.amazon.com/Ordinary-Hyaluronic-Acid-2-30ml/dp/B01MYEZPC8/ref=sr_"
+    },
+    {
+      "number": "37",
+      "name": "The Ordinary Glycolic Acid 7% Toning Solution",
+      "url": "https://www.amazon.com/Ordinary-Exfoliating-Brightening-Smoothing-Even-Looking/"
+    },
+    {
+      "number": "38",
+      "name": "La Roche-Posay Hyalu B5 Serum",
+      "url": "https://www.amazon.com/Roche-Posay-Hyalu-Hyaluronic-Anti-Wrinkle-Concentrate/d"
+    },
+    {
+      "number": "39",
+      "name": "Avene RetrinAL 0.1 Intensive Cream",
+      "url": "https://www.amazon.com/Av%C3%A8ne-Multi-Corrective-Formulated-Retinaldehyde-"
+    },
+    {
+      "number": "40",
+      "name": "Vichy Mineral 89 Hyaluronic Acid Serum",
+      "url": "https://www.amazon.com/sspa/click?ie=UTF8&spc=MToyMzUzMzc2NjcwODc0MTM"
+    },
+    {
+      "number": "41",
+      "name": "PanOxyl 10% Benzoyl Peroxide Wash",
+      "url": "https://www.amazon.com/PanOxyl-Foaming-Peroxide-Strength-Antimicrobial/dp/B08"
+    },
+    {
+      "number": "42",
+      "name": "PanOxyl 4% Benzoyl Peroxide Cream Cleanser",
+      "url": "https://www.amazon.com/PanOxyl-Benzoyl-Peroxide-Control-Antimicrobial/dp/B081K"
+    },
+    {
+      "number": "43",
+      "name": "Neutrogena On-the-Spot Acne Treatment (BPO 2.5%)",
+      "url": "https://www.amazon.com/sspa/click?ie=UTF8&spc=MTo1MzY5OTk3NTAxMDUwNjE"
+    },
+    {
+      "number": "44",
+      "name": "La Roche-Posay Effaclar Duo Dual Acne Treatment",
+      "url": "https://www.amazon.com/Roche-Posay-Mattifying-Blackheads-Whiteheads-Non-Gre"
+    },
+    {
+      "number": "45",
+      "name": "CeraVe Acne Foaming Cream Cleanser (BPO 4%)",
+      "url": "https://www.amazon.com/CeraVe-Treatment-Hyaluronic-Niacinamide-Sensitive/dp/B0"
+    },
+    {
+      "number": "46",
+      "name": "La Roche-Posay Cicaplast Baume B5",
+      "url": "https://www.amazon.com/Roche-Posay-Cicaplast-Baume-Multi-Purpose-Butter/dp/B0"
+    },
+    {
+      "number": "47",
+      "name": "Avene Cicalfate+",
+      "url": "https://www.amazon.com/Eau-Thermale-Restorative-Protective-recommended/dp/B0"
+    },
+    {
+      "number": "48",
+      "name": "Vanicream Lite Lotion",
+      "url": "https://www.amazon.com/sspa/click?ie=UTF8&spc=MTo0Mzg4NjkwNzc2MzIzNzQyO"
+    },
+    {
+      "number": "49",
+      "name": "Eucerin Advanced Repair Cream",
+      "url": "https://www.amazon.com/Eucerin-Advanced-Repair-Skin-Lotion/dp/B003BMJGKE/ref"
+    },
+    {
+      "number": "50",
+      "name": "Bioderma Sensibio AR Anti-Redness Cream",
+      "url": "https://www.amazon.com/Bioderma-SENSIBIO-AR-CREAM/dp/B0DVSM4W61/ref=sr"
+    }
+  ],
+  "total_products": 48
+}

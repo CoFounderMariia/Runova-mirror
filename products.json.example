@@ -1,0 +1,47 @@
+{
+  "oily_skin": {
+    "name": "CeraVe Foaming Facial Cleanser",
+    "description": "Oil-free, non-comedogenic, removes excess oil without over-drying",
+    "price": "$14.99",
+    "image": "/static/images/products/cerave-foaming.jpg",
+    "link": "https://www.amazon.com/s?k=CeraVe+Foaming+Facial+Cleanser"
+  },
+  "dry_skin": {
+    "name": "CeraVe Moisturizing Cream",
+    "description": "Rich, non-greasy formula with ceramides and hyaluronic acid",
+    "price": "$18.99",
+    "image": "/static/images/products/cerave-moisturizing.jpg",
+    "link": "https://www.amazon.com/s?k=CeraVe+Moisturizing+Cream"
+  },
+  "acne_breakout": {
+    "name": "CeraVe Renewing SA Cleanser",
+    "description": "Salicylic acid formula reduces breakouts and unclogs pores",
+    "price": "$12.99",
+    "image": "/static/images/products/cerave-sa-cleanser.jpg",
+    "link": "https://www.amazon.com/s?k=CeraVe+Renewing+SA+Cleanser"
+  },
+  "sensitive_skin": {
+    "name": "La Roche-Posay Toleriane Double Repair Moisturizer",
+    "description": "Fragrance-free, gentle formula for sensitive skin",
+    "price": "$21.99",
+    "image": "/static/images/products/laroche-toleriane.jpg",
+    "link": "https://www.amazon.com/s?k=La+Roche-Posay+Toleriane"
+  },
+  "anti_aging": {
+    "name": "CeraVe Skin Renewing Retinol Serum",
+    "description": "Retinol formula reduces fine lines and improves texture",
+    "price": "$17.99",
+    "image": "/static/images/products/cerave-retinol.jpg",
+    "link": "https://www.amazon.com/s?k=CeraVe+Retinol+Serum"
+  }
+}
+
+
+
+
+
+
+
+
+
+

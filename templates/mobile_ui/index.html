@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Runova - Smart Skin Analysis</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Mobile Container -->
+    <div class="mobile-container">
+        <!-- Top Camera Section (Sticky) -->
+        <div class="camera-section" id="cameraSection">
+            <div class="camera-preview mirror-container mirror-frame" id="cameraPreview">
+                <video id="cameraVideo" autoplay playsinline muted></video>
+                <canvas id="cameraCanvas" style="display: none;"></canvas>
+                <div class="analysis-anchor">
+                    <!-- сюда вставляется карточка -->
+                </div>
+            </div>
+            
+            <!-- Face Scan Overlay -->
+            <div class="face-scan-overlay" id="faceScanOverlay">
+                <div class="scan-oval"></div>
+                <div class="scan-instructions" id="scanInstructions"></div>
+                <div class="scan-progress">
+                    <div class="progress-bar" id="progressBar"></div>
+                    <div class="progress-text" id="progressText">0%</div>
+                </div>
+            </div>
+            
+            <!-- Validation Message Overlay -->
+            <div class="validation-overlay" id="validationOverlay" style="display: none;">
+                <div class="validation-message" id="validationMessage"></div>
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="content-area">
+            <!-- Chat Feed -->
+            <div class="chat-feed" id="chatFeed">
+                <!-- Messages will be added here dynamically -->
+            </div>
+
+            <!-- Product Recommendations -->
+            <div class="recommendations-section" id="recommendationsSection">
+                <!-- Product cards will be added here -->
+            </div>
+        </div>
+
+        <!-- Bottom Controls -->
+        <div class="bottom-controls">
+            <button class="scan-button" id="scanButton">
+                <span class="scan-icon">📸</span>
+                <span>Scan Face</span>
+            </button>
+            <button class="analyze-button" id="analyzeSkinBtn">
+                <span class="analyze-icon">🔍</span>
+                <span>Analyze Skin</span>
+            </button>
+            <button class="voice-button" id="voiceButton">
+                <span class="voice-icon">🎤</span>
+                <span>Ask Runova</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="spinner"></div>
+        <p>Processing...</p>
+    </div>
+
+    <!-- MediaPipe Face Mesh for on-device face detection -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/face_mesh.js" crossorigin="anonymous"></script>
+    
+    <script src="memory.js"></script>
+    <script src="face-detection.js"></script>
+    <script src="camera.js"></script>
+    <script src="chat.js"></script>
+    <script src="product-manager.js"></script>
+    <script src="scan.js"></script>
+    <script src="/static/mobile_ui/app.js"></script>
+
+</body>
+</html>
+

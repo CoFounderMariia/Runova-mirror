@@ -1,0 +1,30 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f5f5f5;
+}
+
+.iphone {
+    width: 430px; /* iPhone 17 Pro Max width */
+    height: 932px; /* iPhone 17 Pro Max height */
+    background: black;
+    border-radius: 50px;
+    padding: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.screen {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 35px;
+    background: white;
+}
+
+.app-screen {
+    width: 100%;
+    height: 100%;
+    border: none;
+}

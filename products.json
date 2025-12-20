@@ -1,0 +1,110 @@
+{
+  "oily_skin": {
+    "name": "CeraVe Foaming Facial Cleanser",
+    "description": "Oil-free, non-comedogenic, removes excess oil without over-drying",
+    "price": "$14.99",
+    "image": "https://m.media-amazon.com/images/I/51+yNMwODML._SL1000_.jpg",
+    "link": "https://www.amazon.com/dp/B07RJ18VMF"
+  },
+  "dry_skin": {
+    "name": "CeraVe PM Facial Moisturizing Lotion",
+    "description": "Rich, non-greasy formula with ceramides and hyaluronic acid",
+    "price": "$18.99",
+    "image": "https://m.media-amazon.com/images/I/71jdcrAdwbL._SL1500_.jpg",
+    "link": "https://www.amazon.com/dp/B00365DABC"
+  },
+  "acne_breakout": {
+    "name": "CeraVe Acne Control Cleanser (2% Salicylic Acid)",
+    "description": "Salicylic acid formula reduces breakouts and unclogs pores",
+    "price": "$12.99",
+    "image": "https://m.media-amazon.com/images/I/61A8RtysNcL._SL1500_.jpg",
+    "link": "https://www.amazon.com/dp/B0C7JJG6BB"
+  },
+  "sensitive_skin": {
+    "name": "La Roche-Posay Toleriane Double Repair Face Moisturizer",
+    "description": "Fragrance-free, gentle formula for sensitive skin",
+    "price": "$21.99",
+    "image": "https://m.media-amazon.com/images/I/51x78epntaL._SL1060_.jpg",
+    "link": "https://www.amazon.com/dp/B01N9SPQHQ"
+  },
+  "anti_aging": {
+    "name": "CeraVe Skin Renewing Retinol Serum",
+    "description": "Retinol formula reduces fine lines and improves texture",
+    "price": "$17.99",
+    "image": "https://m.media-amazon.com/images/I/61Ur42d0HCL._SL1500_.jpg",
+    "link": "https://www.amazon.com/dp/B07XJ7XWLW"
+  },
+  "sunscreen": {
+    "name": "CeraVe Hydrating Mineral Sunscreen SPF 50",
+    "description": "Mineral-based sunscreen with titanium dioxide and zinc oxide, suitable for sensitive skin",
+    "price": "$14.99",
+    "image": "https://m.media-amazon.com/images/I/516C4V8krML._SL1000_.jpg",
+    "link": "https://a.co/d/5PfcIJQ"
+  },
+  "sunscreen_elta_clear": {
+    "name": "EltaMD UV Clear SPF 46",
+    "description": "Broad-spectrum sunscreen with niacinamide, fragrance-free, suitable for acne-prone and sensitive skin",
+    "price": "$37.00",
+    "image": "https://m.media-amazon.com/images/I/61d1YZzHpuL._SL1500_.jpg",
+    "link": "https://a.co/d/iPao0Kd"
+  },
+  "sunscreen_elta_daily": {
+    "name": "EltaMD UV Daily SPF 40",
+    "description": "Hydrating sunscreen with hyaluronic acid, fragrance-free, lightweight formula",
+    "price": "$33.00",
+    "image": "https://m.media-amazon.com/images/I/61Z1ahoxjIL._SL1500_.jpg",
+    "link": "https://a.co/d/dW8Xah3"
+  },
+  "sunscreen_lrp_melt": {
+    "name": "La Roche-Posay Anthelios Melt-In Milk SPF 60",
+    "description": "High protection sunscreen with advanced UVA/UVB protection, fast-absorbing, fragrance-free",
+    "price": "$36.99",
+    "image": "https://m.media-amazon.com/images/I/61qA+KLguKL._SL1500_.jpg",
+    "link": "https://a.co/d/46z8LHL"
+  },
+  "sunscreen_lrp_mineral": {
+    "name": "La Roche-Posay Anthelios Mineral SPF 50",
+    "description": "Mineral sunscreen with titanium dioxide and zinc oxide, fragrance-free, gentle for sensitive skin",
+    "price": "$34.99",
+    "image": "https://m.media-amazon.com/images/I/61H-DTdM-5L._SL1500_.jpg",
+    "link": "https://a.co/d/42P4kOY"
+  },
+  "sunscreen_supergoop_unseen": {
+    "name": "Supergoop Unseen Sunscreen SPF 40",
+    "description": "Invisible, weightless sunscreen with blue sea kale, suitable for all skin types",
+    "price": "$38.00",
+    "image": "https://m.media-amazon.com/images/I/51NusOVeiBL._SL1500_.jpg",
+    "link": "https://a.co/d/fn7RZpH"
+  },
+  "sunscreen_neutrogena_sheer": {
+    "name": "Neutrogena Ultra Sheer Dry-Touch SPF 55",
+    "description": "Non-greasy, fast-absorbing sunscreen with Helioplex technology, water-resistant",
+    "price": "$11.97",
+    "image": "https://m.media-amazon.com/images/I/61vAh7A3wTL._SL1500_.jpg",
+    "link": "https://a.co/d/fLiS1zD"
+  },
+  "sunscreen_blue_lizard": {
+    "name": "Blue Lizard Sensitive Mineral SPF 50",
+    "description": "Mineral sunscreen with zinc oxide and titanium dioxide, fragrance-free, reef-safe",
+    "price": "$14.99",
+    "image": "https://m.media-amazon.com/images/I/61Ur42d0HCL._SL1500_.jpg",
+    "link": "https://www.amazon.com/Blue-Lizard-Sensitive-Mineral-Sunscreen/dp/B084ZP848Y/"
+  },
+  "sunscreen_neutrogena_hydro_boost": {
+    "name": "Neutrogena Hydro Boost Water Gel Lotion SPF 50",
+    "description": "Hydrating water gel sunscreen with hyaluronic acid, lightweight, broad-spectrum protection",
+    "price": "$16.97",
+    "image": "https://m.media-amazon.com/images/I/715ymey+RhL._SL1500_.jpg",
+    "link": "https://a.co/d/38iGk7m"
+  }
+}
+
+
+
+
+
+
+
+
+
+
