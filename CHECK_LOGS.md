@@ -76,3 +76,10 @@ grep "error" logs/youcam_api_*.log -i
 
 
 
+
+
+
+
+
+
+

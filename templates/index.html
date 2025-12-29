@@ -209,7 +209,8 @@ body {
   align-items: center;
   justify-content: center;
   padding: 0;
-  z-index: 10;
+  z-index: 100;
+  pointer-events: auto;
 }
 
 .mic-icon {
@@ -218,6 +219,7 @@ body {
   stroke: currentColor;
   fill: none;
   transition: all 0.2s ease;
+  pointer-events: none; /* Allow clicks to pass through to button */
 }
 
 .mic-button:hover {
@@ -454,9 +456,15 @@ body {
 <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/face_mesh.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
+<script src="/static/mobile_ui/quality-gate.js"></script>
+<script src="/static/mobile_ui/app.js"></script>
+<script src="/static/mobile_ui/product-manager.js"></script>
 
 </head>
 <body>
+  <script>
+    console.error("🚨 REAL TEMPLATE LOADED:", location.pathname);
+  </script>
 
   <div class="mirror-frame">
     <div class="camera-dot"></div>
@@ -481,7 +489,7 @@ body {
     </button>
     
     <!-- Microphone button (left of Analyze) -->
-    <button id="micButton" class="mic-button" title="Voice recording (tap to toggle)">
+    <button id="micButton" class="mic-button" title="Voice recording (tap to toggle)" onclick="console.log('🎤 Mic button clicked!');">
       <svg class="mic-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M12 1C10.34 1 9 2.34 9 4V12C9 13.66 10.34 15 12 15C13.66 15 15 13.66 15 12V4C15 2.34 13.66 1 12 1Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M19 10V12C19 15.87 15.87 19 12 19C8.13 19 5 15.87 5 12V10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -812,12 +820,18 @@ body {
         canvasCtx.restore();
       }
 
+      // Store camera stream globally to reuse audio track
+      let cameraStream = null;
+      
       async function startCamera() {
         try {
           const stream = await navigator.mediaDevices.getUserMedia({
             video: { facingMode: "user" },
             audio: true
           });
+          
+          // Store stream globally for reuse
+          cameraStream = stream;
       
           const cam = document.getElementById("cam");
           cam.srcObject = stream;
@@ -945,10 +959,45 @@ body {
             restartAll(); // Reset states
           });
         }
+        
+        // Microphone button toggle (syncs with V key) - MUST be inside DOMContentLoaded
+        // Wait for app.js to load before attaching handler
+        function attachMicButtonHandler() {
+          const micButton = document.getElementById('micButton');
+          if (micButton) {
+            if (typeof window.startRecording === 'function' && typeof window.stopRecording === 'function') {
+              console.log('✅ Mic button found, app.js loaded, attaching click handler');
+              micButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                console.log('🎤 Mic button clicked!');
+                
+                // Toggle recording state - sync with V key behavior
+                const isCurrentlyRecording = window.isRecording || micButton.classList.contains('recording');
+                
+                if (isCurrentlyRecording) {
+                  // Stop recording (same as V key up)
+                  console.log('🎤 Mic button: Stop recording');
+                  window.stopRecording();
+                } else {
+                  // Start recording (same as V key down)
+                  console.log('🎤 Mic button: Start recording');
+                  window.startRecording().catch(err => {
+                    console.error('❌ startRecording() failed:', err);
+                  });
+                }
+              });
+            } else {
+              console.warn('⚠️ app.js not loaded yet, retrying...');
+              setTimeout(attachMicButtonHandler, 100);
+            }
+          } else {
+            console.error('❌ Mic button not found in DOM');
+          }
+        }
+        attachMicButtonHandler();
       });
       </script>
-<script src="/static/mobile_ui/product-manager.js"></script>
-<script src="/static/mobile_ui/app.js"></script>
 <style>
   .loading {
     position: absolute;
@@ -1474,31 +1523,6 @@ const statusText = document.getElementById("statusText");
     
     // Close button for recommendations section is now handled in product-manager.js
     // when showRecommendations() is called
-    
-    // Microphone button toggle (syncs with V key)
-    const micButton = document.getElementById('micButton');
-    if (micButton) {
-      micButton.addEventListener('click', function() {
-        // Toggle recording state - sync with V key behavior
-        const isCurrentlyRecording = window.isRecording || micButton.classList.contains('recording');
-        
-        if (isCurrentlyRecording) {
-          // Stop recording (same as V key up)
-          console.log('🎤 Mic button: Stop recording');
-          if (typeof stopRecording === 'function') {
-            stopRecording();
-          }
-        } else {
-          // Start recording (same as V key down)
-          console.log('🎤 Mic button: Start recording');
-          if (typeof startRecording === 'function') {
-            startRecording().catch(err => {
-              console.error('❌ startRecording() failed:', err);
-            });
-          }
-        }
-      });
-    }
     
     // Check if scanButton exists (for mobile UI) or analyzeSkinBtn (for mirror.html)
     const scanButton = document.getElementById("scanButton");

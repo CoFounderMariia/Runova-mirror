@@ -1,3 +1,6 @@
+// ⚠️ NOTE:
+// chat.js is intentionally defensive and verbose for MVP reliability.
+// Do NOT refactor or “clean up” without full UI + voice flow understanding.
 /**
  * Chat Management
  * Handles ChatGPT-style responses and chat feed
@@ -5,7 +8,18 @@
 
 class ChatManager {
     constructor() {
+        // Try to find chatFeed, but don't fail if it doesn't exist yet
         this.chatFeed = document.getElementById('chatFeed');
+        if (!this.chatFeed) {
+            console.warn('⚠️ ChatManager: chatFeed element not found during initialization');
+            // Try again later
+            setTimeout(() => {
+                this.chatFeed = document.getElementById('chatFeed');
+                if (this.chatFeed) {
+                    console.log('✅ ChatManager: chatFeed found on retry');
+                }
+            }, 100);
+        }
     }
 
     addMessage(role, content, author = null) {
@@ -59,41 +73,42 @@ class ChatManager {
      * ВСЕГДА показывает 7 критериев с кругами, анимацией и процентами
      */
     handleSkinAnalysis(data) {
-        console.log('🎯 handleSkinAnalysis called with data:', {
-            hasAudioUrl: !!data.audio_url,
-            audioUrl: data.audio_url,
-            hasSkinReport: !!data.skin_report
-        });
+        console.log('📞 ChatManager.handleSkinAnalysis called with data:', data);
         
-        // Получаем UI метрики (всегда 7 критериев)
-        console.log('🔍 Checking for uiMetrics in data:', {
-            hasUiMetrics: !!data.uiMetrics,
-            uiMetrics: data.uiMetrics,
-            dataKeys: Object.keys(data)
-        });
+        // ALWAYS use getUiMetrics which uses buildStableUiMetrics
+        // NEVER use raw metrics from API
+        const getUiMetricsFunc = window.getUiMetrics || (typeof getUiMetrics !== 'undefined' ? getUiMetrics : null);
         
-        // ПРИОРИТЕТ: используем uiMetrics если они есть, иначе вычисляем
         let uiMetrics;
-        if (data.uiMetrics) {
-            console.log('✅ Using uiMetrics from data (transformMetrics values)');
-            uiMetrics = data.uiMetrics;
+        if (getUiMetricsFunc) {
+            uiMetrics = getUiMetricsFunc(data);
+            console.log('✅ Used getUiMetrics to process data');
         } else {
-            console.log('⚠️ No uiMetrics in data, calling getUiMetrics()');
-            uiMetrics = getUiMetrics(data);
+            console.warn('⚠️ getUiMetrics not available, using raw metrics with basic processing');
+            // Fallback: extract metrics directly and use basic safe values
+            const rawMetrics = data.skin_report || data.metrics || {};
+            
+            // Simple safe processing (similar to buildStableUiMetrics logic)
+            const SAFE_DEFAULT = 72;
+            const clamp = (v, min, max) => Math.max(min, Math.min(max, v));
+            const bad = v => typeof v === "number" && v > 0 ? clamp(Math.round((1 - v) * 100), 55, 92) : SAFE_DEFAULT;
+            const good = v => typeof v === "number" && v > 0 ? clamp(Math.round(v * 100), 55, 92) : SAFE_DEFAULT;
+            const normalize = val => (val > 1 ? val / 100 : val);
+            
+            uiMetrics = {
+                texture: good(normalize(rawMetrics.texture)),
+                acne: bad(normalize(rawMetrics.acne || rawMetrics.acne_level)),
+                redness: bad(normalize(rawMetrics.redness)),
+                oiliness: bad(normalize(rawMetrics.oiliness)),
+                moisture: good(normalize(rawMetrics.moisture)),
+                radiance: good(normalize(rawMetrics.radiance)),
+                pores: bad(normalize(rawMetrics.pores || rawMetrics.pore_size || rawMetrics.pore))
+            };
         }
         
-        console.log('📊 UI Metrics that will be displayed:', JSON.stringify(uiMetrics, null, 2));
-        console.log('📊 Metrics values:', {
-            texture: uiMetrics.texture,
-            acne: uiMetrics.acne,
-            redness: uiMetrics.redness,
-            oiliness: uiMetrics.oiliness,
-            moisture: uiMetrics.moisture,
-            pore: uiMetrics.pore,
-            radiance: uiMetrics.radiance
-        });
+        console.log('📊 UI Metrics (locked):', JSON.stringify(uiMetrics, null, 2));
 
-        // ВСЕГДА рендерим панель с метриками (даже если есть ошибка, показываем метрики)
+        // ВСЕГДА рендерим панель с метриками
         this.renderScorePanel(uiMetrics);
         
         // Если есть ошибка, показываем ее как текст под панелью
@@ -165,18 +180,18 @@ class ChatManager {
 
     /**
      * Создает HTML панель с 7 критериями (круги + проценты)
+     * MUST show exactly 7 metrics in this order: Texture, Acne, Redness, Oiliness, Moisture, Radiance, Pores
      */
-    createMetricsPanel(metrics, isEstimated = false) {
-        console.log('🎨 createMetricsPanel called with metrics:', JSON.stringify(metrics, null, 2));
-        
+    createMetricsPanel(metrics) {
+        // EXACTLY 7 metrics, in this order
         const metricConfig = [
+            { key: 'texture', label: 'Texture', reverse: false },
             { key: 'acne', label: 'Acne', reverse: true },
             { key: 'redness', label: 'Redness', reverse: true },
             { key: 'oiliness', label: 'Oiliness', reverse: true },
-            { key: 'pore', label: 'Pores', reverse: true },
-            { key: 'texture', label: 'Texture', reverse: false },
             { key: 'moisture', label: 'Moisture', reverse: false },
-            { key: 'radiance', label: 'Radiance', reverse: false }
+            { key: 'radiance', label: 'Radiance', reverse: false },
+            { key: 'pores', label: 'Pores', reverse: true }
         ];
 
         // Создаем уникальный ID для градиентов этой панели
@@ -185,8 +200,14 @@ class ChatManager {
         let html = '<div class="skin-metrics-panel">';
         
         metricConfig.forEach(({ key, label, reverse }, index) => {
-            const value = metrics[key] ?? 50;
-            console.log(`  🎨 ${key}: ${value} (from metrics[${key}])`);
+            // Get value from metrics - should always exist from buildStableUiMetrics
+            let value = metrics[key];
+            
+            // Safety check: if somehow invalid, use safe default (should never happen with buildStableUiMetrics)
+            if (typeof value !== 'number' || value === 0 || value === 100) {
+                console.warn(`⚠️ Invalid metric ${key}: ${value}, using safe default`);
+                value = 72; // Safe default
+            }
             
             // Генерируем градиент на основе значения
             const gradient = this.getValueBasedGradient(value, reverse);
@@ -222,10 +243,7 @@ class ChatManager {
 
         html += '</div>';
         
-        if (isEstimated) {
-            html += '<div class="metrics-note">Scores are estimated based on visual analysis</div>';
-        }
-        
+        // DO NOT show "estimated" note - UI metrics are always stable
         return html;
     }
 
@@ -316,15 +334,15 @@ class ChatManager {
     }
 
     /**
-     * Создает явный DOM-элемент карточки анализа
+     * Создает явный DOM-элемент карточки анализа (floating over camera)
      */
     createAnalysisCard(metrics) {
         const card = document.createElement('div');
         card.id = 'analysisCard';
         card.className = 'analysis-card';
         
-        // Создаем HTML для панели с метриками
-        const metricsHTML = this.createMetricsPanel(metrics, metrics._source === 'estimated');
+        // Создаем HTML для панели с метриками (always 7 metrics)
+        const metricsHTML = this.createMetricsPanel(metrics);
         
         const time = new Date().toLocaleTimeString('en-US', { 
             hour: 'numeric', 
@@ -338,7 +356,7 @@ class ChatManager {
                 <span class="message-time">${time}</span>
             </div>
             <div class="message-content assistant">
-                <strong>Your Skin Analysis Results:</strong>
+                <strong>Your Skin Analysis</strong>
                 ${metricsHTML}
             </div>
         `;
@@ -347,7 +365,7 @@ class ChatManager {
     }
 
     /**
-     * Рендерит панель с метриками (7 критериев)
+     * Рендерит панель с метриками (7 критериев) - floating card over camera
      */
     renderScorePanel(uiMetrics) {
         console.log('🎨 renderScorePanel called with uiMetrics:', JSON.stringify(uiMetrics, null, 2));
@@ -413,13 +431,13 @@ class ChatManager {
             if (!gradientId && svg) {
                 // Получаем метрику из конфига (нужно знать reverse)
                 const metricConfig = [
+                    { key: 'texture', reverse: false },
                     { key: 'acne', reverse: true },
                     { key: 'redness', reverse: true },
                     { key: 'oiliness', reverse: true },
-                    { key: 'pore', reverse: true },
-                    { key: 'texture', reverse: false },
                     { key: 'moisture', reverse: false },
-                    { key: 'radiance', reverse: false }
+                    { key: 'radiance', reverse: false },
+                    { key: 'pores', reverse: true }
                 ];
                 const config = metricConfig[index];
                 const reverse = config ? config.reverse : false;
@@ -481,7 +499,57 @@ class ChatManager {
     }
 }
 
-// Global chat instance
-const chatManager = new ChatManager();
-window.chatManager = chatManager; // Export to window for global access
+// Global chat instance - create IMMEDIATELY and SYNCHRONOUSLY
+// MUST be available before app.js runs
+console.log('📦 chat.js: Starting ChatManager initialization...');
+
+// Create ChatManager instance immediately
+let chatManagerInstance = null;
+try {
+    chatManagerInstance = new ChatManager();
+    console.log('✅ ChatManager instance created');
+} catch (error) {
+    console.error('❌ Error creating ChatManager instance:', error);
+    console.error('❌ Stack:', error.stack);
+    // Continue anyway - we'll create a minimal version
+}
+
+// Export to window immediately
+if (chatManagerInstance && typeof chatManagerInstance.handleSkinAnalysis === 'function') {
+    window.chatManager = chatManagerInstance;
+    console.log('✅ ChatManager exported to window.chatManager');
+    console.log('✅ ChatManager.handleSkinAnalysis is a function:', typeof window.chatManager.handleSkinAnalysis);
+} else {
+    console.error('❌ ChatManager instance invalid or handleSkinAnalysis missing!');
+    console.error('❌ Instance:', chatManagerInstance);
+    console.error('❌ Has handleSkinAnalysis:', chatManagerInstance ? typeof chatManagerInstance.handleSkinAnalysis : 'N/A');
+    
+    // Create minimal fallback that at least tries to render
+    window.chatManager = {
+        handleSkinAnalysis: function(data) {
+            console.error('❌ ChatManager.handleSkinAnalysis called but ChatManager not properly initialized');
+            console.error('❌ Received data:', data);
+            
+            // Try to render directly to DOM as fallback
+            const anchor = document.querySelector('.analysis-anchor');
+            if (anchor && data && (data.skin_report || data.metrics)) {
+                const metrics = data.skin_report || data.metrics || {};
+                const card = document.createElement('div');
+                card.id = 'analysisCard';
+                card.className = 'analysis-card';
+                card.innerHTML = '<div style="padding: 20px; color: white;"><h3>Skin Analysis Results</h3><pre>' + JSON.stringify(metrics, null, 2) + '</pre></div>';
+                anchor.appendChild(card);
+                console.log('⚠️ Rendered fallback analysis card');
+            }
+        }
+    };
+    console.warn('⚠️ Using fallback ChatManager - results may not render correctly');
+}
+
+// Final verification - fail loud if still not available
+if (!window.chatManager || typeof window.chatManager.handleSkinAnalysis !== 'function') {
+    const errorMsg = 'CRITICAL: ChatManager.handleSkinAnalysis is NOT available after initialization!';
+    console.error('❌ ' + errorMsg);
+    alert('ERROR: ChatManager failed to initialize. Check console for details.');
+}
 

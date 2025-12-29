@@ -1,0 +1,321 @@
+2025-12-22 18:29:59,518 - INFO - ================================================================================
+2025-12-22 18:29:59,519 - INFO - YouCam API Logger initialized
+2025-12-22 18:29:59,519 - INFO - Log file: logs/youcam_api_20251222.log
+2025-12-22 18:29:59,519 - INFO - ================================================================================
+2025-12-22 18:34:32,438 - INFO - ================================================================================
+2025-12-22 18:34:32,438 - INFO - YouCam API Logger initialized
+2025-12-22 18:34:32,438 - INFO - Log file: logs/youcam_api_20251222.log
+2025-12-22 18:34:32,438 - INFO - ================================================================================
+2025-12-22 19:15:01,156 - INFO - ================================================================================
+2025-12-22 19:15:01,156 - INFO - YouCam API Logger initialized
+2025-12-22 19:15:01,156 - INFO - Log file: logs/youcam_api_20251222.log
+2025-12-22 19:15:01,156 - INFO - ================================================================================
+2025-12-22 19:24:55,631 - INFO - ================================================================================
+2025-12-22 19:24:55,631 - INFO - YouCam API Logger initialized
+2025-12-22 19:24:55,631 - INFO - Log file: logs/youcam_api_20251222.log
+2025-12-22 19:24:55,631 - INFO - ================================================================================
+2025-12-22 19:37:50,394 - INFO - ================================================================================
+2025-12-22 19:37:50,394 - INFO - YouCam API Logger initialized
+2025-12-22 19:37:50,395 - INFO - Log file: logs/youcam_api_20251222.log
+2025-12-22 19:37:50,395 - INFO - ================================================================================
+2025-12-22 19:42:54,709 - INFO - ================================================================================
+2025-12-22 19:42:54,709 - INFO - YouCam API Logger initialized
+2025-12-22 19:42:54,709 - INFO - Log file: logs/youcam_api_20251222.log
+2025-12-22 19:42:54,709 - INFO - ================================================================================
+2025-12-22 19:47:03,172 - INFO - ================================================================================
+2025-12-22 19:47:03,172 - INFO - YouCam API Logger initialized
+2025-12-22 19:47:03,172 - INFO - Log file: logs/youcam_api_20251222.log
+2025-12-22 19:47:03,172 - INFO - ================================================================================
+2025-12-22 19:50:22,203 - INFO - ================================================================================
+2025-12-22 19:50:22,204 - INFO - YouCam API Logger initialized
+2025-12-22 19:50:22,204 - INFO - Log file: logs/youcam_api_20251222.log
+2025-12-22 19:50:22,204 - INFO - ================================================================================
+2025-12-22 19:58:23,832 - INFO - ================================================================================
+2025-12-22 19:58:23,832 - INFO - YouCam API Logger initialized
+2025-12-22 19:58:23,832 - INFO - Log file: logs/youcam_api_20251222.log
+2025-12-22 19:58:23,832 - INFO - ================================================================================
+2025-12-22 19:58:29,423 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.105:5001
+2025-12-22 19:58:29,423 - INFO - [33mPress CTRL+C to quit[0m
+2025-12-22 19:58:34,252 - INFO - 127.0.0.1 - - [22/Dec/2025 19:58:34] "GET / HTTP/1.1" 200 -
+2025-12-22 19:58:34,359 - INFO - 127.0.0.1 - - [22/Dec/2025 19:58:34] "GET /static/mobile_ui/app.js HTTP/1.1" 200 -
+2025-12-22 19:58:34,359 - INFO - 127.0.0.1 - - [22/Dec/2025 19:58:34] "GET /static/mobile_ui/product-manager.js HTTP/1.1" 200 -
+2025-12-22 19:58:34,740 - INFO - 127.0.0.1 - - [22/Dec/2025 19:58:34] "[36mGET /manifest.json HTTP/1.1[0m" 304 -
+2025-12-22 19:58:34,742 - INFO - 127.0.0.1 - - [22/Dec/2025 19:58:34] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-12-22 19:58:34,752 - INFO - 127.0.0.1 - - [22/Dec/2025 19:58:34] "[36mGET /icon-192.png HTTP/1.1[0m" 304 -
+2025-12-22 19:58:36,562 - INFO - 127.0.0.1 - - [22/Dec/2025 19:58:36] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-12-22 19:58:41,061 - INFO - 127.0.0.1 - - [22/Dec/2025 19:58:41] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-12-22 19:58:41,069 - INFO - 127.0.0.1 - - [22/Dec/2025 19:58:41] "[36mGET /manifest.json HTTP/1.1[0m" 304 -
+2025-12-22 19:59:15,866 - INFO - ================================================================================
+2025-12-22 19:59:15,867 - INFO - YouCam RAW RESPONSE
+2025-12-22 19:59:15,867 - INFO - Status Code: 200
+2025-12-22 19:59:15,867 - INFO - Full Response JSON:
+{
+  "status": 200,
+  "data": {
+    "task_id": "gR9lKClL7b3T0g2_MkiGnsBuOlUg-x68N87s4_BWY3-pHEXfj-PRWwUDMsYIW4y8"
+  }
+}
+2025-12-22 19:59:15,867 - INFO - ================================================================================
+2025-12-22 19:59:15,876 - INFO - 127.0.0.1 - - [22/Dec/2025 19:59:15] "[35m[1mPOST /skin-analyze HTTP/1.1[0m" 500 -
+2025-12-22 19:59:26,985 - INFO - ================================================================================
+2025-12-22 19:59:26,987 - INFO - YouCam RAW RESPONSE
+2025-12-22 19:59:26,987 - INFO - Status Code: 200
+2025-12-22 19:59:26,987 - INFO - Full Response JSON:
+{
+  "status": 200,
+  "data": {
+    "task_id": "XI1tddaPULuaTaDrhhX_TeqT6wpgc2JbyZPJ0GTX5BS_T-HeRQKpeADcxoDNdmUl"
+  }
+}
+2025-12-22 19:59:26,987 - INFO - ================================================================================
+2025-12-22 19:59:27,007 - INFO - 127.0.0.1 - - [22/Dec/2025 19:59:27] "[35m[1mPOST /skin-analyze HTTP/1.1[0m" 500 -
+2025-12-22 19:59:34,433 - INFO - ================================================================================
+2025-12-22 19:59:34,435 - INFO - YouCam RAW RESPONSE
+2025-12-22 19:59:34,435 - INFO - Status Code: 200
+2025-12-22 19:59:34,435 - INFO - Full Response JSON:
+{
+  "status": 200,
+  "data": {
+    "task_id": "RQWVE85HUZcJrhgn0COmpCa-ipjZYZ3skrdSk29C0JDofLMhAnvfF6BGirLg3Mvw"
+  }
+}
+2025-12-22 19:59:34,435 - INFO - ================================================================================
+2025-12-22 19:59:34,440 - INFO - 127.0.0.1 - - [22/Dec/2025 19:59:34] "[35m[1mPOST /skin-analyze HTTP/1.1[0m" 500 -
+2025-12-22 20:04:06,585 - INFO - ================================================================================
+2025-12-22 20:04:06,585 - INFO - YouCam API Logger initialized
+2025-12-22 20:04:06,585 - INFO - Log file: logs/youcam_api_20251222.log
+2025-12-22 20:04:06,585 - INFO - ================================================================================
+2025-12-22 20:04:12,466 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.105:5001
+2025-12-22 20:04:12,467 - INFO - [33mPress CTRL+C to quit[0m
+2025-12-22 20:04:22,877 - INFO - 127.0.0.1 - - [22/Dec/2025 20:04:22] "GET / HTTP/1.1" 200 -
+2025-12-22 20:04:23,073 - INFO - 127.0.0.1 - - [22/Dec/2025 20:04:23] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-12-22 20:04:23,093 - INFO - 127.0.0.1 - - [22/Dec/2025 20:04:23] "GET /static/mobile_ui/product-manager.js HTTP/1.1" 200 -
+2025-12-22 20:04:23,097 - INFO - 127.0.0.1 - - [22/Dec/2025 20:04:23] "GET /static/mobile_ui/app.js HTTP/1.1" 200 -
+2025-12-22 20:04:23,219 - INFO - 127.0.0.1 - - [22/Dec/2025 20:04:23] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-12-22 20:04:23,223 - INFO - 127.0.0.1 - - [22/Dec/2025 20:04:23] "[36mGET /manifest.json HTTP/1.1[0m" 304 -
+2025-12-22 20:04:23,233 - INFO - 127.0.0.1 - - [22/Dec/2025 20:04:23] "[36mGET /icon-192.png HTTP/1.1[0m" 304 -
+2025-12-22 20:04:23,614 - INFO - 127.0.0.1 - - [22/Dec/2025 20:04:23] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-12-22 20:04:41,120 - INFO - 127.0.0.1 - - [22/Dec/2025 20:04:41] "[36mGET /manifest.json HTTP/1.1[0m" 304 -
+2025-12-22 20:04:41,124 - INFO - 127.0.0.1 - - [22/Dec/2025 20:04:41] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-12-22 20:04:41,712 - INFO - 127.0.0.1 - - [22/Dec/2025 20:04:41] "[35m[1mPOST /skin-analyze HTTP/1.1[0m" 504 -
+2025-12-22 20:04:49,458 - INFO - 127.0.0.1 - - [22/Dec/2025 20:04:49] "[35m[1mPOST /skin-analyze HTTP/1.1[0m" 504 -
+2025-12-22 20:09:24,474 - INFO - ================================================================================
+2025-12-22 20:09:24,474 - INFO - YouCam API Logger initialized
+2025-12-22 20:09:24,474 - INFO - Log file: logs/youcam_api_20251222.log
+2025-12-22 20:09:24,474 - INFO - ================================================================================
+2025-12-22 20:09:29,745 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.105:5001
+2025-12-22 20:09:29,745 - INFO - [33mPress CTRL+C to quit[0m
+2025-12-22 20:09:37,054 - INFO - 127.0.0.1 - - [22/Dec/2025 20:09:37] "GET / HTTP/1.1" 200 -
+2025-12-22 20:09:37,188 - INFO - 127.0.0.1 - - [22/Dec/2025 20:09:37] "GET /static/mobile_ui/product-manager.js HTTP/1.1" 200 -
+2025-12-22 20:09:37,205 - INFO - 127.0.0.1 - - [22/Dec/2025 20:09:37] "GET /static/mobile_ui/app.js HTTP/1.1" 200 -
+2025-12-22 20:09:37,312 - INFO - 127.0.0.1 - - [22/Dec/2025 20:09:37] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-12-22 20:09:37,314 - INFO - 127.0.0.1 - - [22/Dec/2025 20:09:37] "[36mGET /manifest.json HTTP/1.1[0m" 304 -
+2025-12-22 20:09:37,318 - INFO - 127.0.0.1 - - [22/Dec/2025 20:09:37] "[36mGET /icon-192.png HTTP/1.1[0m" 304 -
+2025-12-22 20:09:37,632 - INFO - 127.0.0.1 - - [22/Dec/2025 20:09:37] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-12-22 20:09:39,397 - INFO - 127.0.0.1 - - [22/Dec/2025 20:09:39] "POST /skin-analyze/start HTTP/1.1" 200 -
+2025-12-22 20:09:40,475 - INFO - 127.0.0.1 - - [22/Dec/2025 20:09:40] "[36mGET /manifest.json HTTP/1.1[0m" 304 -
+2025-12-22 20:09:40,479 - INFO - 127.0.0.1 - - [22/Dec/2025 20:09:40] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-12-22 20:09:42,275 - INFO - 127.0.0.1 - - [22/Dec/2025 20:09:42] "GET /skin-analyze/result?task_id=GJfSkQeXEOS2QgrO7NMXKt95Wq-25sORXL9sKIgUDZUAW4Q-09R22qcS8DAqZhPU HTTP/1.1" 200 -
+2025-12-22 20:09:45,173 - INFO - 127.0.0.1 - - [22/Dec/2025 20:09:45] "GET /skin-analyze/result?task_id=GJfSkQeXEOS2QgrO7NMXKt95Wq-25sORXL9sKIgUDZUAW4Q-09R22qcS8DAqZhPU HTTP/1.1" 200 -
+2025-12-22 20:09:48,066 - INFO - 127.0.0.1 - - [22/Dec/2025 20:09:48] "GET /skin-analyze/result?task_id=GJfSkQeXEOS2QgrO7NMXKt95Wq-25sORXL9sKIgUDZUAW4Q-09R22qcS8DAqZhPU HTTP/1.1" 200 -
+2025-12-22 20:09:50,916 - INFO - 127.0.0.1 - - [22/Dec/2025 20:09:50] "GET /skin-analyze/result?task_id=GJfSkQeXEOS2QgrO7NMXKt95Wq-25sORXL9sKIgUDZUAW4Q-09R22qcS8DAqZhPU HTTP/1.1" 200 -
+2025-12-22 20:09:53,787 - INFO - 127.0.0.1 - - [22/Dec/2025 20:09:53] "GET /skin-analyze/result?task_id=GJfSkQeXEOS2QgrO7NMXKt95Wq-25sORXL9sKIgUDZUAW4Q-09R22qcS8DAqZhPU HTTP/1.1" 200 -
+2025-12-22 20:09:54,554 - INFO - 127.0.0.1 - - [22/Dec/2025 20:09:54] "[35m[1mPOST /skin-analyze HTTP/1.1[0m" 504 -
+2025-12-22 20:09:56,654 - INFO - 127.0.0.1 - - [22/Dec/2025 20:09:56] "GET /skin-analyze/result?task_id=GJfSkQeXEOS2QgrO7NMXKt95Wq-25sORXL9sKIgUDZUAW4Q-09R22qcS8DAqZhPU HTTP/1.1" 200 -
+2025-12-22 20:09:59,585 - INFO - 127.0.0.1 - - [22/Dec/2025 20:09:59] "GET /skin-analyze/result?task_id=GJfSkQeXEOS2QgrO7NMXKt95Wq-25sORXL9sKIgUDZUAW4Q-09R22qcS8DAqZhPU HTTP/1.1" 200 -
+2025-12-22 20:10:02,632 - INFO - 127.0.0.1 - - [22/Dec/2025 20:10:02] "GET /skin-analyze/result?task_id=GJfSkQeXEOS2QgrO7NMXKt95Wq-25sORXL9sKIgUDZUAW4Q-09R22qcS8DAqZhPU HTTP/1.1" 200 -
+2025-12-22 20:10:06,251 - INFO - 127.0.0.1 - - [22/Dec/2025 20:10:06] "GET /skin-analyze/result?task_id=GJfSkQeXEOS2QgrO7NMXKt95Wq-25sORXL9sKIgUDZUAW4Q-09R22qcS8DAqZhPU HTTP/1.1" 200 -
+2025-12-22 20:10:07,705 - INFO - 127.0.0.1 - - [22/Dec/2025 20:10:07] "[35m[1mPOST /skin-analyze HTTP/1.1[0m" 504 -
+2025-12-22 20:10:09,329 - INFO - 127.0.0.1 - - [22/Dec/2025 20:10:09] "GET /skin-analyze/result?task_id=GJfSkQeXEOS2QgrO7NMXKt95Wq-25sORXL9sKIgUDZUAW4Q-09R22qcS8DAqZhPU HTTP/1.1" 200 -
+2025-12-22 20:10:12,254 - INFO - 127.0.0.1 - - [22/Dec/2025 20:10:12] "GET /skin-analyze/result?task_id=GJfSkQeXEOS2QgrO7NMXKt95Wq-25sORXL9sKIgUDZUAW4Q-09R22qcS8DAqZhPU HTTP/1.1" 200 -
+2025-12-22 20:10:15,259 - INFO - 127.0.0.1 - - [22/Dec/2025 20:10:15] "GET /skin-analyze/result?task_id=GJfSkQeXEOS2QgrO7NMXKt95Wq-25sORXL9sKIgUDZUAW4Q-09R22qcS8DAqZhPU HTTP/1.1" 200 -
+2025-12-22 20:10:18,255 - INFO - 127.0.0.1 - - [22/Dec/2025 20:10:18] "GET /skin-analyze/result?task_id=GJfSkQeXEOS2QgrO7NMXKt95Wq-25sORXL9sKIgUDZUAW4Q-09R22qcS8DAqZhPU HTTP/1.1" 200 -
+2025-12-22 20:10:21,256 - INFO - 127.0.0.1 - - [22/Dec/2025 20:10:21] "GET /skin-analyze/result?task_id=GJfSkQeXEOS2QgrO7NMXKt95Wq-25sORXL9sKIgUDZUAW4Q-09R22qcS8DAqZhPU HTTP/1.1" 200 -
+2025-12-22 20:10:24,251 - INFO - 127.0.0.1 - - [22/Dec/2025 20:10:24] "GET /skin-analyze/result?task_id=GJfSkQeXEOS2QgrO7NMXKt95Wq-25sORXL9sKIgUDZUAW4Q-09R22qcS8DAqZhPU HTTP/1.1" 200 -
+2025-12-22 20:10:27,275 - INFO - 127.0.0.1 - - [22/Dec/2025 20:10:27] "GET /skin-analyze/result?task_id=GJfSkQeXEOS2QgrO7NMXKt95Wq-25sORXL9sKIgUDZUAW4Q-09R22qcS8DAqZhPU HTTP/1.1" 200 -
+2025-12-22 20:10:30,322 - INFO - 127.0.0.1 - - [22/Dec/2025 20:10:30] "GET /skin-analyze/result?task_id=GJfSkQeXEOS2QgrO7NMXKt95Wq-25sORXL9sKIgUDZUAW4Q-09R22qcS8DAqZhPU HTTP/1.1" 200 -
+2025-12-22 20:10:33,255 - INFO - 127.0.0.1 - - [22/Dec/2025 20:10:33] "GET /skin-analyze/result?task_id=GJfSkQeXEOS2QgrO7NMXKt95Wq-25sORXL9sKIgUDZUAW4Q-09R22qcS8DAqZhPU HTTP/1.1" 200 -
+2025-12-22 20:10:36,297 - INFO - 127.0.0.1 - - [22/Dec/2025 20:10:36] "GET /skin-analyze/result?task_id=GJfSkQeXEOS2QgrO7NMXKt95Wq-25sORXL9sKIgUDZUAW4Q-09R22qcS8DAqZhPU HTTP/1.1" 200 -
+2025-12-22 20:10:39,258 - INFO - 127.0.0.1 - - [22/Dec/2025 20:10:39] "GET /skin-analyze/result?task_id=GJfSkQeXEOS2QgrO7NMXKt95Wq-25sORXL9sKIgUDZUAW4Q-09R22qcS8DAqZhPU HTTP/1.1" 200 -
+2025-12-22 20:12:59,365 - INFO - ================================================================================
+2025-12-22 20:12:59,366 - INFO - YouCam API Logger initialized
+2025-12-22 20:12:59,366 - INFO - Log file: logs/youcam_api_20251222.log
+2025-12-22 20:12:59,366 - INFO - ================================================================================
+2025-12-22 20:13:05,647 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.105:5001
+2025-12-22 20:13:05,647 - INFO - [33mPress CTRL+C to quit[0m
+2025-12-22 20:13:13,321 - INFO - 127.0.0.1 - - [22/Dec/2025 20:13:13] "GET / HTTP/1.1" 200 -
+2025-12-22 20:13:13,859 - INFO - 127.0.0.1 - - [22/Dec/2025 20:13:13] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-12-22 20:13:13,864 - INFO - 127.0.0.1 - - [22/Dec/2025 20:13:13] "GET /static/mobile_ui/product-manager.js HTTP/1.1" 200 -
+2025-12-22 20:13:13,864 - INFO - 127.0.0.1 - - [22/Dec/2025 20:13:13] "GET /static/mobile_ui/app.js HTTP/1.1" 200 -
+2025-12-22 20:13:13,948 - INFO - 127.0.0.1 - - [22/Dec/2025 20:13:13] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-12-22 20:13:13,952 - INFO - 127.0.0.1 - - [22/Dec/2025 20:13:13] "[36mGET /manifest.json HTTP/1.1[0m" 304 -
+2025-12-22 20:13:14,028 - INFO - 127.0.0.1 - - [22/Dec/2025 20:13:14] "[36mGET /icon-192.png HTTP/1.1[0m" 304 -
+2025-12-22 20:13:14,742 - INFO - 127.0.0.1 - - [22/Dec/2025 20:13:14] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-12-22 20:13:17,442 - INFO - 127.0.0.1 - - [22/Dec/2025 20:13:17] "POST /skin-analyze/start HTTP/1.1" 200 -
+2025-12-22 20:13:20,349 - INFO - 127.0.0.1 - - [22/Dec/2025 20:13:20] "GET /skin-analyze/result?task_id=fiayYZEXaG5RWzlxIKoat-PfsHVzvvotz5BkvTl9JqvuBnfaicGqRBJ07vQUNNdQ HTTP/1.1" 200 -
+2025-12-22 20:13:23,236 - INFO - 127.0.0.1 - - [22/Dec/2025 20:13:23] "GET /skin-analyze/result?task_id=fiayYZEXaG5RWzlxIKoat-PfsHVzvvotz5BkvTl9JqvuBnfaicGqRBJ07vQUNNdQ HTTP/1.1" 200 -
+2025-12-22 20:13:26,132 - INFO - 127.0.0.1 - - [22/Dec/2025 20:13:26] "GET /skin-analyze/result?task_id=fiayYZEXaG5RWzlxIKoat-PfsHVzvvotz5BkvTl9JqvuBnfaicGqRBJ07vQUNNdQ HTTP/1.1" 200 -
+2025-12-22 20:13:29,167 - INFO - 127.0.0.1 - - [22/Dec/2025 20:13:29] "GET /skin-analyze/result?task_id=fiayYZEXaG5RWzlxIKoat-PfsHVzvvotz5BkvTl9JqvuBnfaicGqRBJ07vQUNNdQ HTTP/1.1" 200 -
+2025-12-22 20:13:32,076 - INFO - 127.0.0.1 - - [22/Dec/2025 20:13:32] "GET /skin-analyze/result?task_id=fiayYZEXaG5RWzlxIKoat-PfsHVzvvotz5BkvTl9JqvuBnfaicGqRBJ07vQUNNdQ HTTP/1.1" 200 -
+2025-12-22 20:13:33,104 - INFO - 127.0.0.1 - - [22/Dec/2025 20:13:33] "[35m[1mPOST /skin-analyze HTTP/1.1[0m" 202 -
+2025-12-22 20:13:35,106 - INFO - 127.0.0.1 - - [22/Dec/2025 20:13:35] "GET /skin-analyze/result?task_id=fiayYZEXaG5RWzlxIKoat-PfsHVzvvotz5BkvTl9JqvuBnfaicGqRBJ07vQUNNdQ HTTP/1.1" 200 -
+2025-12-22 20:13:38,318 - INFO - 127.0.0.1 - - [22/Dec/2025 20:13:38] "GET /skin-analyze/result?task_id=fiayYZEXaG5RWzlxIKoat-PfsHVzvvotz5BkvTl9JqvuBnfaicGqRBJ07vQUNNdQ HTTP/1.1" 200 -
+2025-12-22 20:13:41,291 - INFO - 127.0.0.1 - - [22/Dec/2025 20:13:41] "GET /skin-analyze/result?task_id=fiayYZEXaG5RWzlxIKoat-PfsHVzvvotz5BkvTl9JqvuBnfaicGqRBJ07vQUNNdQ HTTP/1.1" 200 -
+2025-12-22 20:13:41,630 - INFO - 127.0.0.1 - - [22/Dec/2025 20:13:41] "[35m[1mPOST /skin-analyze HTTP/1.1[0m" 202 -
+2025-12-22 20:13:44,307 - INFO - 127.0.0.1 - - [22/Dec/2025 20:13:44] "GET /skin-analyze/result?task_id=fiayYZEXaG5RWzlxIKoat-PfsHVzvvotz5BkvTl9JqvuBnfaicGqRBJ07vQUNNdQ HTTP/1.1" 200 -
+2025-12-22 20:13:47,322 - INFO - 127.0.0.1 - - [22/Dec/2025 20:13:47] "GET /skin-analyze/result?task_id=fiayYZEXaG5RWzlxIKoat-PfsHVzvvotz5BkvTl9JqvuBnfaicGqRBJ07vQUNNdQ HTTP/1.1" 200 -
+2025-12-22 20:13:50,293 - INFO - 127.0.0.1 - - [22/Dec/2025 20:13:50] "GET /skin-analyze/result?task_id=fiayYZEXaG5RWzlxIKoat-PfsHVzvvotz5BkvTl9JqvuBnfaicGqRBJ07vQUNNdQ HTTP/1.1" 200 -
+2025-12-22 20:13:53,421 - INFO - 127.0.0.1 - - [22/Dec/2025 20:13:53] "GET /skin-analyze/result?task_id=fiayYZEXaG5RWzlxIKoat-PfsHVzvvotz5BkvTl9JqvuBnfaicGqRBJ07vQUNNdQ HTTP/1.1" 200 -
+2025-12-22 20:13:57,305 - INFO - 127.0.0.1 - - [22/Dec/2025 20:13:57] "GET /skin-analyze/result?task_id=fiayYZEXaG5RWzlxIKoat-PfsHVzvvotz5BkvTl9JqvuBnfaicGqRBJ07vQUNNdQ HTTP/1.1" 200 -
+2025-12-22 20:14:00,336 - INFO - 127.0.0.1 - - [22/Dec/2025 20:14:00] "GET /skin-analyze/result?task_id=fiayYZEXaG5RWzlxIKoat-PfsHVzvvotz5BkvTl9JqvuBnfaicGqRBJ07vQUNNdQ HTTP/1.1" 200 -
+2025-12-22 20:14:03,292 - INFO - 127.0.0.1 - - [22/Dec/2025 20:14:03] "GET /skin-analyze/result?task_id=fiayYZEXaG5RWzlxIKoat-PfsHVzvvotz5BkvTl9JqvuBnfaicGqRBJ07vQUNNdQ HTTP/1.1" 200 -
+2025-12-22 20:14:06,303 - INFO - 127.0.0.1 - - [22/Dec/2025 20:14:06] "GET /skin-analyze/result?task_id=fiayYZEXaG5RWzlxIKoat-PfsHVzvvotz5BkvTl9JqvuBnfaicGqRBJ07vQUNNdQ HTTP/1.1" 200 -
+2025-12-22 20:14:09,322 - INFO - 127.0.0.1 - - [22/Dec/2025 20:14:09] "GET /skin-analyze/result?task_id=fiayYZEXaG5RWzlxIKoat-PfsHVzvvotz5BkvTl9JqvuBnfaicGqRBJ07vQUNNdQ HTTP/1.1" 200 -
+2025-12-22 20:14:12,279 - INFO - 127.0.0.1 - - [22/Dec/2025 20:14:12] "GET /skin-analyze/result?task_id=fiayYZEXaG5RWzlxIKoat-PfsHVzvvotz5BkvTl9JqvuBnfaicGqRBJ07vQUNNdQ HTTP/1.1" 200 -
+2025-12-22 20:14:15,294 - INFO - 127.0.0.1 - - [22/Dec/2025 20:14:15] "GET /skin-analyze/result?task_id=fiayYZEXaG5RWzlxIKoat-PfsHVzvvotz5BkvTl9JqvuBnfaicGqRBJ07vQUNNdQ HTTP/1.1" 200 -
+2025-12-22 20:14:18,303 - INFO - 127.0.0.1 - - [22/Dec/2025 20:14:18] "GET /skin-analyze/result?task_id=fiayYZEXaG5RWzlxIKoat-PfsHVzvvotz5BkvTl9JqvuBnfaicGqRBJ07vQUNNdQ HTTP/1.1" 200 -
+2025-12-22 20:14:36,077 - INFO - 127.0.0.1 - - [22/Dec/2025 20:14:36] "POST /skin-analyze/start HTTP/1.1" 200 -
+2025-12-22 20:14:39,024 - INFO - 127.0.0.1 - - [22/Dec/2025 20:14:39] "GET /skin-analyze/result?task_id=fcx9wYTlyUwuaiSp0WmV1FrbV_F23Vm7rvAtr_GkYCl0zC8ZWDi3NLs4ptFhJkxu HTTP/1.1" 200 -
+2025-12-22 20:14:41,954 - INFO - 127.0.0.1 - - [22/Dec/2025 20:14:41] "GET /skin-analyze/result?task_id=fcx9wYTlyUwuaiSp0WmV1FrbV_F23Vm7rvAtr_GkYCl0zC8ZWDi3NLs4ptFhJkxu HTTP/1.1" 200 -
+2025-12-22 20:14:44,817 - INFO - 127.0.0.1 - - [22/Dec/2025 20:14:44] "GET /skin-analyze/result?task_id=fcx9wYTlyUwuaiSp0WmV1FrbV_F23Vm7rvAtr_GkYCl0zC8ZWDi3NLs4ptFhJkxu HTTP/1.1" 200 -
+2025-12-22 20:14:47,716 - INFO - 127.0.0.1 - - [22/Dec/2025 20:14:47] "GET /skin-analyze/result?task_id=fcx9wYTlyUwuaiSp0WmV1FrbV_F23Vm7rvAtr_GkYCl0zC8ZWDi3NLs4ptFhJkxu HTTP/1.1" 200 -
+2025-12-22 20:14:50,617 - INFO - 127.0.0.1 - - [22/Dec/2025 20:14:50] "GET /skin-analyze/result?task_id=fcx9wYTlyUwuaiSp0WmV1FrbV_F23Vm7rvAtr_GkYCl0zC8ZWDi3NLs4ptFhJkxu HTTP/1.1" 200 -
+2025-12-22 20:14:51,318 - INFO - 127.0.0.1 - - [22/Dec/2025 20:14:51] "[35m[1mPOST /skin-analyze HTTP/1.1[0m" 202 -
+2025-12-22 20:14:53,554 - INFO - 127.0.0.1 - - [22/Dec/2025 20:14:53] "GET /skin-analyze/result?task_id=fcx9wYTlyUwuaiSp0WmV1FrbV_F23Vm7rvAtr_GkYCl0zC8ZWDi3NLs4ptFhJkxu HTTP/1.1" 200 -
+2025-12-22 20:14:57,321 - INFO - 127.0.0.1 - - [22/Dec/2025 20:14:57] "GET /skin-analyze/result?task_id=fcx9wYTlyUwuaiSp0WmV1FrbV_F23Vm7rvAtr_GkYCl0zC8ZWDi3NLs4ptFhJkxu HTTP/1.1" 200 -
+2025-12-22 20:15:00,429 - INFO - 127.0.0.1 - - [22/Dec/2025 20:15:00] "GET /skin-analyze/result?task_id=fcx9wYTlyUwuaiSp0WmV1FrbV_F23Vm7rvAtr_GkYCl0zC8ZWDi3NLs4ptFhJkxu HTTP/1.1" 200 -
+2025-12-22 20:15:04,418 - INFO - 127.0.0.1 - - [22/Dec/2025 20:15:04] "GET /skin-analyze/result?task_id=fcx9wYTlyUwuaiSp0WmV1FrbV_F23Vm7rvAtr_GkYCl0zC8ZWDi3NLs4ptFhJkxu HTTP/1.1" 200 -
+2025-12-22 20:15:08,298 - INFO - 127.0.0.1 - - [22/Dec/2025 20:15:08] "GET /skin-analyze/result?task_id=fcx9wYTlyUwuaiSp0WmV1FrbV_F23Vm7rvAtr_GkYCl0zC8ZWDi3NLs4ptFhJkxu HTTP/1.1" 200 -
+2025-12-22 20:15:11,671 - INFO - 127.0.0.1 - - [22/Dec/2025 20:15:11] "GET /skin-analyze/result?task_id=fcx9wYTlyUwuaiSp0WmV1FrbV_F23Vm7rvAtr_GkYCl0zC8ZWDi3NLs4ptFhJkxu HTTP/1.1" 200 -
+2025-12-22 20:15:15,329 - INFO - 127.0.0.1 - - [22/Dec/2025 20:15:15] "GET /skin-analyze/result?task_id=fcx9wYTlyUwuaiSp0WmV1FrbV_F23Vm7rvAtr_GkYCl0zC8ZWDi3NLs4ptFhJkxu HTTP/1.1" 200 -
+2025-12-22 20:15:18,367 - INFO - 127.0.0.1 - - [22/Dec/2025 20:15:18] "GET /skin-analyze/result?task_id=fcx9wYTlyUwuaiSp0WmV1FrbV_F23Vm7rvAtr_GkYCl0zC8ZWDi3NLs4ptFhJkxu HTTP/1.1" 200 -
+2025-12-22 20:15:21,308 - INFO - 127.0.0.1 - - [22/Dec/2025 20:15:21] "GET /skin-analyze/result?task_id=fcx9wYTlyUwuaiSp0WmV1FrbV_F23Vm7rvAtr_GkYCl0zC8ZWDi3NLs4ptFhJkxu HTTP/1.1" 200 -
+2025-12-22 20:15:24,766 - INFO - 127.0.0.1 - - [22/Dec/2025 20:15:24] "GET /skin-analyze/result?task_id=fcx9wYTlyUwuaiSp0WmV1FrbV_F23Vm7rvAtr_GkYCl0zC8ZWDi3NLs4ptFhJkxu HTTP/1.1" 200 -
+2025-12-22 20:15:28,327 - INFO - 127.0.0.1 - - [22/Dec/2025 20:15:28] "GET /skin-analyze/result?task_id=fcx9wYTlyUwuaiSp0WmV1FrbV_F23Vm7rvAtr_GkYCl0zC8ZWDi3NLs4ptFhJkxu HTTP/1.1" 200 -
+2025-12-22 20:15:31,308 - INFO - 127.0.0.1 - - [22/Dec/2025 20:15:31] "GET /skin-analyze/result?task_id=fcx9wYTlyUwuaiSp0WmV1FrbV_F23Vm7rvAtr_GkYCl0zC8ZWDi3NLs4ptFhJkxu HTTP/1.1" 200 -
+2025-12-22 20:15:34,321 - INFO - 127.0.0.1 - - [22/Dec/2025 20:15:34] "GET /skin-analyze/result?task_id=fcx9wYTlyUwuaiSp0WmV1FrbV_F23Vm7rvAtr_GkYCl0zC8ZWDi3NLs4ptFhJkxu HTTP/1.1" 200 -
+2025-12-22 20:15:37,324 - INFO - 127.0.0.1 - - [22/Dec/2025 20:15:37] "GET /skin-analyze/result?task_id=fcx9wYTlyUwuaiSp0WmV1FrbV_F23Vm7rvAtr_GkYCl0zC8ZWDi3NLs4ptFhJkxu HTTP/1.1" 200 -
+2025-12-22 20:15:40,329 - INFO - 127.0.0.1 - - [22/Dec/2025 20:15:40] "GET /skin-analyze/result?task_id=fcx9wYTlyUwuaiSp0WmV1FrbV_F23Vm7rvAtr_GkYCl0zC8ZWDi3NLs4ptFhJkxu HTTP/1.1" 200 -
+2025-12-22 20:17:45,179 - INFO - ================================================================================
+2025-12-22 20:17:45,179 - INFO - YouCam API Logger initialized
+2025-12-22 20:17:45,179 - INFO - Log file: logs/youcam_api_20251222.log
+2025-12-22 20:17:45,179 - INFO - ================================================================================
+2025-12-22 20:17:50,971 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.105:5001
+2025-12-22 20:17:50,982 - INFO - [33mPress CTRL+C to quit[0m
+2025-12-22 20:20:07,911 - INFO - 127.0.0.1 - - [22/Dec/2025 20:20:07] "GET / HTTP/1.1" 200 -
+2025-12-22 20:20:08,057 - INFO - 127.0.0.1 - - [22/Dec/2025 20:20:08] "GET /static/mobile_ui/product-manager.js HTTP/1.1" 200 -
+2025-12-22 20:20:08,058 - INFO - 127.0.0.1 - - [22/Dec/2025 20:20:08] "GET /static/mobile_ui/app.js HTTP/1.1" 200 -
+2025-12-22 20:20:08,070 - INFO - 127.0.0.1 - - [22/Dec/2025 20:20:08] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-12-22 20:20:08,162 - INFO - 127.0.0.1 - - [22/Dec/2025 20:20:08] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-12-22 20:20:08,164 - INFO - 127.0.0.1 - - [22/Dec/2025 20:20:08] "[36mGET /manifest.json HTTP/1.1[0m" 304 -
+2025-12-22 20:20:08,168 - INFO - 127.0.0.1 - - [22/Dec/2025 20:20:08] "[36mGET /icon-192.png HTTP/1.1[0m" 304 -
+2025-12-22 20:20:09,744 - INFO - 127.0.0.1 - - [22/Dec/2025 20:20:09] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-12-22 20:20:11,276 - INFO - 127.0.0.1 - - [22/Dec/2025 20:20:11] "POST /skin-analyze/start HTTP/1.1" 200 -
+2025-12-22 20:20:14,210 - INFO - 127.0.0.1 - - [22/Dec/2025 20:20:14] "GET /skin-analyze/result?task_id=_mUdK2rfIpkrFk0SPRw3S7shZBOpD4DDNfVhqozdDzuDTTCBMv0FbhYuXq0NE42V HTTP/1.1" 200 -
+2025-12-22 20:20:17,084 - INFO - 127.0.0.1 - - [22/Dec/2025 20:20:17] "GET /skin-analyze/result?task_id=_mUdK2rfIpkrFk0SPRw3S7shZBOpD4DDNfVhqozdDzuDTTCBMv0FbhYuXq0NE42V HTTP/1.1" 200 -
+2025-12-22 20:20:20,000 - INFO - 127.0.0.1 - - [22/Dec/2025 20:20:20] "GET /skin-analyze/result?task_id=_mUdK2rfIpkrFk0SPRw3S7shZBOpD4DDNfVhqozdDzuDTTCBMv0FbhYuXq0NE42V HTTP/1.1" 200 -
+2025-12-22 20:20:22,910 - INFO - 127.0.0.1 - - [22/Dec/2025 20:20:22] "GET /skin-analyze/result?task_id=_mUdK2rfIpkrFk0SPRw3S7shZBOpD4DDNfVhqozdDzuDTTCBMv0FbhYuXq0NE42V HTTP/1.1" 200 -
+2025-12-22 20:20:25,798 - INFO - 127.0.0.1 - - [22/Dec/2025 20:20:25] "GET /skin-analyze/result?task_id=_mUdK2rfIpkrFk0SPRw3S7shZBOpD4DDNfVhqozdDzuDTTCBMv0FbhYuXq0NE42V HTTP/1.1" 200 -
+2025-12-22 20:20:26,436 - INFO - 127.0.0.1 - - [22/Dec/2025 20:20:26] "[35m[1mPOST /skin-analyze HTTP/1.1[0m" 202 -
+2025-12-22 20:20:28,726 - INFO - 127.0.0.1 - - [22/Dec/2025 20:20:28] "GET /skin-analyze/result?task_id=_mUdK2rfIpkrFk0SPRw3S7shZBOpD4DDNfVhqozdDzuDTTCBMv0FbhYuXq0NE42V HTTP/1.1" 200 -
+2025-12-22 20:20:31,605 - INFO - 127.0.0.1 - - [22/Dec/2025 20:20:31] "GET /skin-analyze/result?task_id=_mUdK2rfIpkrFk0SPRw3S7shZBOpD4DDNfVhqozdDzuDTTCBMv0FbhYuXq0NE42V HTTP/1.1" 200 -
+2025-12-22 20:20:34,468 - INFO - 127.0.0.1 - - [22/Dec/2025 20:20:34] "GET /skin-analyze/result?task_id=_mUdK2rfIpkrFk0SPRw3S7shZBOpD4DDNfVhqozdDzuDTTCBMv0FbhYuXq0NE42V HTTP/1.1" 200 -
+2025-12-22 20:20:37,347 - INFO - 127.0.0.1 - - [22/Dec/2025 20:20:37] "GET /skin-analyze/result?task_id=_mUdK2rfIpkrFk0SPRw3S7shZBOpD4DDNfVhqozdDzuDTTCBMv0FbhYuXq0NE42V HTTP/1.1" 200 -
+2025-12-22 20:20:40,221 - INFO - 127.0.0.1 - - [22/Dec/2025 20:20:40] "GET /skin-analyze/result?task_id=_mUdK2rfIpkrFk0SPRw3S7shZBOpD4DDNfVhqozdDzuDTTCBMv0FbhYuXq0NE42V HTTP/1.1" 200 -
+2025-12-22 20:20:43,084 - INFO - 127.0.0.1 - - [22/Dec/2025 20:20:43] "GET /skin-analyze/result?task_id=_mUdK2rfIpkrFk0SPRw3S7shZBOpD4DDNfVhqozdDzuDTTCBMv0FbhYuXq0NE42V HTTP/1.1" 200 -
+2025-12-22 20:20:45,935 - INFO - 127.0.0.1 - - [22/Dec/2025 20:20:45] "GET /skin-analyze/result?task_id=_mUdK2rfIpkrFk0SPRw3S7shZBOpD4DDNfVhqozdDzuDTTCBMv0FbhYuXq0NE42V HTTP/1.1" 200 -
+2025-12-22 20:20:48,911 - INFO - 127.0.0.1 - - [22/Dec/2025 20:20:48] "GET /skin-analyze/result?task_id=_mUdK2rfIpkrFk0SPRw3S7shZBOpD4DDNfVhqozdDzuDTTCBMv0FbhYuXq0NE42V HTTP/1.1" 200 -
+2025-12-22 20:20:49,322 - INFO - 127.0.0.1 - - [22/Dec/2025 20:20:49] "[35m[1mPOST /skin-analyze HTTP/1.1[0m" 202 -
+2025-12-22 20:20:51,835 - INFO - 127.0.0.1 - - [22/Dec/2025 20:20:51] "GET /skin-analyze/result?task_id=_mUdK2rfIpkrFk0SPRw3S7shZBOpD4DDNfVhqozdDzuDTTCBMv0FbhYuXq0NE42V HTTP/1.1" 200 -
+2025-12-22 20:20:54,751 - INFO - 127.0.0.1 - - [22/Dec/2025 20:20:54] "GET /skin-analyze/result?task_id=_mUdK2rfIpkrFk0SPRw3S7shZBOpD4DDNfVhqozdDzuDTTCBMv0FbhYuXq0NE42V HTTP/1.1" 200 -
+2025-12-22 20:20:57,677 - INFO - 127.0.0.1 - - [22/Dec/2025 20:20:57] "GET /skin-analyze/result?task_id=_mUdK2rfIpkrFk0SPRw3S7shZBOpD4DDNfVhqozdDzuDTTCBMv0FbhYuXq0NE42V HTTP/1.1" 200 -
+2025-12-22 20:21:00,614 - INFO - 127.0.0.1 - - [22/Dec/2025 20:21:00] "GET /skin-analyze/result?task_id=_mUdK2rfIpkrFk0SPRw3S7shZBOpD4DDNfVhqozdDzuDTTCBMv0FbhYuXq0NE42V HTTP/1.1" 200 -
+2025-12-22 20:21:03,530 - INFO - 127.0.0.1 - - [22/Dec/2025 20:21:03] "GET /skin-analyze/result?task_id=_mUdK2rfIpkrFk0SPRw3S7shZBOpD4DDNfVhqozdDzuDTTCBMv0FbhYuXq0NE42V HTTP/1.1" 200 -
+2025-12-22 20:21:07,326 - INFO - 127.0.0.1 - - [22/Dec/2025 20:21:07] "GET /skin-analyze/result?task_id=_mUdK2rfIpkrFk0SPRw3S7shZBOpD4DDNfVhqozdDzuDTTCBMv0FbhYuXq0NE42V HTTP/1.1" 200 -
+2025-12-22 20:21:10,309 - INFO - 127.0.0.1 - - [22/Dec/2025 20:21:10] "GET /skin-analyze/result?task_id=_mUdK2rfIpkrFk0SPRw3S7shZBOpD4DDNfVhqozdDzuDTTCBMv0FbhYuXq0NE42V HTTP/1.1" 200 -
+2025-12-22 20:24:44,690 - INFO - ================================================================================
+2025-12-22 20:24:44,691 - INFO - YouCam API Logger initialized
+2025-12-22 20:24:44,691 - INFO - Log file: logs/youcam_api_20251222.log
+2025-12-22 20:24:44,691 - INFO - ================================================================================
+2025-12-22 20:24:50,717 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.105:5001
+2025-12-22 20:24:50,718 - INFO - [33mPress CTRL+C to quit[0m
+2025-12-22 20:25:39,381 - INFO - 127.0.0.1 - - [22/Dec/2025 20:25:39] "GET / HTTP/1.1" 200 -
+2025-12-22 20:25:39,752 - INFO - 127.0.0.1 - - [22/Dec/2025 20:25:39] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-12-22 20:25:39,763 - INFO - 127.0.0.1 - - [22/Dec/2025 20:25:39] "GET /static/mobile_ui/app.js HTTP/1.1" 200 -
+2025-12-22 20:25:39,763 - INFO - 127.0.0.1 - - [22/Dec/2025 20:25:39] "GET /static/mobile_ui/product-manager.js HTTP/1.1" 200 -
+2025-12-22 20:25:40,013 - INFO - 127.0.0.1 - - [22/Dec/2025 20:25:40] "[36mGET /manifest.json HTTP/1.1[0m" 304 -
+2025-12-22 20:25:40,013 - INFO - 127.0.0.1 - - [22/Dec/2025 20:25:40] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-12-22 20:25:40,020 - INFO - 127.0.0.1 - - [22/Dec/2025 20:25:40] "[36mGET /icon-192.png HTTP/1.1[0m" 304 -
+2025-12-22 20:25:40,336 - INFO - 127.0.0.1 - - [22/Dec/2025 20:25:40] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-12-22 20:25:57,921 - INFO - 127.0.0.1 - - [22/Dec/2025 20:25:57] "[35m[1mPOST /skin-analyze HTTP/1.1[0m" 202 -
+2025-12-22 20:32:21,339 - INFO - ================================================================================
+2025-12-22 20:32:21,340 - INFO - YouCam API Logger initialized
+2025-12-22 20:32:21,340 - INFO - Log file: logs/youcam_api_20251222.log
+2025-12-22 20:32:21,340 - INFO - ================================================================================
+2025-12-22 20:32:32,630 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.105:5001
+2025-12-22 20:32:32,634 - INFO - [33mPress CTRL+C to quit[0m
+2025-12-22 20:34:19,725 - INFO - 127.0.0.1 - - [22/Dec/2025 20:34:19] "[35m[1mPOST /skin-analyze HTTP/1.1[0m" 202 -
+2025-12-22 20:38:26,861 - INFO - ================================================================================
+2025-12-22 20:38:26,865 - INFO - YouCam API Logger initialized
+2025-12-22 20:38:26,867 - INFO - Log file: logs/youcam_api_20251222.log
+2025-12-22 20:38:26,868 - INFO - ================================================================================
+2025-12-22 20:38:33,148 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.105:5001
+2025-12-22 20:38:33,151 - INFO - [33mPress CTRL+C to quit[0m
+2025-12-22 20:38:42,977 - INFO - 127.0.0.1 - - [22/Dec/2025 20:38:42] "GET / HTTP/1.1" 200 -
+2025-12-22 20:38:43,122 - INFO - 127.0.0.1 - - [22/Dec/2025 20:38:43] "GET /static/mobile_ui/app.js HTTP/1.1" 200 -
+2025-12-22 20:38:43,122 - INFO - 127.0.0.1 - - [22/Dec/2025 20:38:43] "GET /static/mobile_ui/product-manager.js HTTP/1.1" 200 -
+2025-12-22 20:38:43,208 - INFO - 127.0.0.1 - - [22/Dec/2025 20:38:43] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-12-22 20:38:43,208 - INFO - 127.0.0.1 - - [22/Dec/2025 20:38:43] "[36mGET /manifest.json HTTP/1.1[0m" 304 -
+2025-12-22 20:38:43,213 - INFO - 127.0.0.1 - - [22/Dec/2025 20:38:43] "[36mGET /icon-192.png HTTP/1.1[0m" 304 -
+2025-12-22 20:38:43,616 - INFO - 127.0.0.1 - - [22/Dec/2025 20:38:43] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-12-22 20:38:48,445 - INFO - 127.0.0.1 - - [22/Dec/2025 20:38:48] "POST /skin-analyze/start HTTP/1.1" 200 -
+2025-12-22 20:38:48,793 - INFO - 127.0.0.1 - - [22/Dec/2025 20:38:48] "[35m[1mGET /skin-analyze/result?task_id=4qSPiEu02Fm1U68sZ0i6vDdGgVNFM2KUKmYNMb6w4OxCZcy9ZZRs_tLhMMhRbtjo HTTP/1.1[0m" 202 -
+2025-12-22 20:38:51,203 - INFO - 127.0.0.1 - - [22/Dec/2025 20:38:51] "[35m[1mGET /skin-analyze/result?task_id=4qSPiEu02Fm1U68sZ0i6vDdGgVNFM2KUKmYNMb6w4OxCZcy9ZZRs_tLhMMhRbtjo HTTP/1.1[0m" 202 -
+2025-12-22 20:38:52,383 - INFO - 127.0.0.1 - - [22/Dec/2025 20:38:52] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-12-22 20:38:52,385 - INFO - 127.0.0.1 - - [22/Dec/2025 20:38:52] "[36mGET /manifest.json HTTP/1.1[0m" 304 -
+2025-12-22 20:38:53,623 - INFO - 127.0.0.1 - - [22/Dec/2025 20:38:53] "[35m[1mGET /skin-analyze/result?task_id=4qSPiEu02Fm1U68sZ0i6vDdGgVNFM2KUKmYNMb6w4OxCZcy9ZZRs_tLhMMhRbtjo HTTP/1.1[0m" 202 -
+2025-12-22 20:38:56,081 - INFO - 127.0.0.1 - - [22/Dec/2025 20:38:56] "[35m[1mGET /skin-analyze/result?task_id=4qSPiEu02Fm1U68sZ0i6vDdGgVNFM2KUKmYNMb6w4OxCZcy9ZZRs_tLhMMhRbtjo HTTP/1.1[0m" 202 -
+2025-12-22 20:38:58,458 - INFO - 127.0.0.1 - - [22/Dec/2025 20:38:58] "[35m[1mGET /skin-analyze/result?task_id=4qSPiEu02Fm1U68sZ0i6vDdGgVNFM2KUKmYNMb6w4OxCZcy9ZZRs_tLhMMhRbtjo HTTP/1.1[0m" 202 -
+2025-12-22 20:39:00,848 - INFO - 127.0.0.1 - - [22/Dec/2025 20:39:00] "[35m[1mGET /skin-analyze/result?task_id=4qSPiEu02Fm1U68sZ0i6vDdGgVNFM2KUKmYNMb6w4OxCZcy9ZZRs_tLhMMhRbtjo HTTP/1.1[0m" 202 -
+2025-12-22 20:39:03,220 - INFO - 127.0.0.1 - - [22/Dec/2025 20:39:03] "[35m[1mGET /skin-analyze/result?task_id=4qSPiEu02Fm1U68sZ0i6vDdGgVNFM2KUKmYNMb6w4OxCZcy9ZZRs_tLhMMhRbtjo HTTP/1.1[0m" 202 -
+2025-12-22 20:39:04,871 - INFO - 127.0.0.1 - - [22/Dec/2025 20:39:04] "[35m[1mPOST /skin-analyze HTTP/1.1[0m" 202 -
+2025-12-22 20:39:05,596 - INFO - 127.0.0.1 - - [22/Dec/2025 20:39:05] "[35m[1mGET /skin-analyze/result?task_id=4qSPiEu02Fm1U68sZ0i6vDdGgVNFM2KUKmYNMb6w4OxCZcy9ZZRs_tLhMMhRbtjo HTTP/1.1[0m" 202 -
+2025-12-22 20:39:07,958 - INFO - 127.0.0.1 - - [22/Dec/2025 20:39:07] "[35m[1mGET /skin-analyze/result?task_id=4qSPiEu02Fm1U68sZ0i6vDdGgVNFM2KUKmYNMb6w4OxCZcy9ZZRs_tLhMMhRbtjo HTTP/1.1[0m" 202 -
+2025-12-22 20:39:10,322 - INFO - 127.0.0.1 - - [22/Dec/2025 20:39:10] "[35m[1mGET /skin-analyze/result?task_id=4qSPiEu02Fm1U68sZ0i6vDdGgVNFM2KUKmYNMb6w4OxCZcy9ZZRs_tLhMMhRbtjo HTTP/1.1[0m" 202 -
+2025-12-22 20:39:12,695 - INFO - 127.0.0.1 - - [22/Dec/2025 20:39:12] "[35m[1mGET /skin-analyze/result?task_id=4qSPiEu02Fm1U68sZ0i6vDdGgVNFM2KUKmYNMb6w4OxCZcy9ZZRs_tLhMMhRbtjo HTTP/1.1[0m" 202 -
+2025-12-22 20:39:15,090 - INFO - 127.0.0.1 - - [22/Dec/2025 20:39:15] "[35m[1mGET /skin-analyze/result?task_id=4qSPiEu02Fm1U68sZ0i6vDdGgVNFM2KUKmYNMb6w4OxCZcy9ZZRs_tLhMMhRbtjo HTTP/1.1[0m" 202 -
+2025-12-22 20:39:17,470 - INFO - 127.0.0.1 - - [22/Dec/2025 20:39:17] "[35m[1mGET /skin-analyze/result?task_id=4qSPiEu02Fm1U68sZ0i6vDdGgVNFM2KUKmYNMb6w4OxCZcy9ZZRs_tLhMMhRbtjo HTTP/1.1[0m" 202 -
+2025-12-22 20:39:19,835 - INFO - 127.0.0.1 - - [22/Dec/2025 20:39:19] "[35m[1mGET /skin-analyze/result?task_id=4qSPiEu02Fm1U68sZ0i6vDdGgVNFM2KUKmYNMb6w4OxCZcy9ZZRs_tLhMMhRbtjo HTTP/1.1[0m" 202 -
+2025-12-22 20:39:22,254 - INFO - 127.0.0.1 - - [22/Dec/2025 20:39:22] "[35m[1mGET /skin-analyze/result?task_id=4qSPiEu02Fm1U68sZ0i6vDdGgVNFM2KUKmYNMb6w4OxCZcy9ZZRs_tLhMMhRbtjo HTTP/1.1[0m" 202 -
+2025-12-22 20:39:24,721 - INFO - 127.0.0.1 - - [22/Dec/2025 20:39:24] "[35m[1mGET /skin-analyze/result?task_id=4qSPiEu02Fm1U68sZ0i6vDdGgVNFM2KUKmYNMb6w4OxCZcy9ZZRs_tLhMMhRbtjo HTTP/1.1[0m" 202 -
+2025-12-22 20:39:27,354 - INFO - 127.0.0.1 - - [22/Dec/2025 20:39:27] "[35m[1mGET /skin-analyze/result?task_id=4qSPiEu02Fm1U68sZ0i6vDdGgVNFM2KUKmYNMb6w4OxCZcy9ZZRs_tLhMMhRbtjo HTTP/1.1[0m" 202 -
+2025-12-22 20:39:30,317 - INFO - 127.0.0.1 - - [22/Dec/2025 20:39:30] "[35m[1mGET /skin-analyze/result?task_id=4qSPiEu02Fm1U68sZ0i6vDdGgVNFM2KUKmYNMb6w4OxCZcy9ZZRs_tLhMMhRbtjo HTTP/1.1[0m" 202 -
+2025-12-22 20:39:33,326 - INFO - 127.0.0.1 - - [22/Dec/2025 20:39:33] "[35m[1mGET /skin-analyze/result?task_id=4qSPiEu02Fm1U68sZ0i6vDdGgVNFM2KUKmYNMb6w4OxCZcy9ZZRs_tLhMMhRbtjo HTTP/1.1[0m" 202 -
+2025-12-22 20:39:36,431 - INFO - 127.0.0.1 - - [22/Dec/2025 20:39:36] "[35m[1mGET /skin-analyze/result?task_id=4qSPiEu02Fm1U68sZ0i6vDdGgVNFM2KUKmYNMb6w4OxCZcy9ZZRs_tLhMMhRbtjo HTTP/1.1[0m" 202 -
+2025-12-22 20:39:39,353 - INFO - 127.0.0.1 - - [22/Dec/2025 20:39:39] "[35m[1mGET /skin-analyze/result?task_id=4qSPiEu02Fm1U68sZ0i6vDdGgVNFM2KUKmYNMb6w4OxCZcy9ZZRs_tLhMMhRbtjo HTTP/1.1[0m" 202 -
+2025-12-22 20:39:42,317 - INFO - 127.0.0.1 - - [22/Dec/2025 20:39:42] "[35m[1mGET /skin-analyze/result?task_id=4qSPiEu02Fm1U68sZ0i6vDdGgVNFM2KUKmYNMb6w4OxCZcy9ZZRs_tLhMMhRbtjo HTTP/1.1[0m" 202 -
+2025-12-22 20:39:45,303 - INFO - 127.0.0.1 - - [22/Dec/2025 20:39:45] "[35m[1mGET /skin-analyze/result?task_id=4qSPiEu02Fm1U68sZ0i6vDdGgVNFM2KUKmYNMb6w4OxCZcy9ZZRs_tLhMMhRbtjo HTTP/1.1[0m" 202 -

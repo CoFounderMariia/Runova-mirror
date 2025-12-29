@@ -20,11 +20,19 @@ class RunovaMemory {
         try {
             const saved = localStorage.getItem('runova_memory');
             if (saved) {
-                this.data = { ...this.data, ...JSON.parse(saved) };
-            }
+                const parsed = JSON.parse(saved);
+                if (parsed && typeof parsed === 'object') {
+                    this.data = { ...this.data, ...parsed };
+                } else {
+                    console.error('Invalid memory data format');
+                }
+        }
+
         } catch (e) {
             console.error('Failed to load memory:', e);
         }
+        this.data.chatHistory = [];
+
     }
 
     // Save to localStorage
@@ -41,7 +49,8 @@ class RunovaMemory {
         this.data.lastScan = {
             timestamp: new Date().toISOString(),
             analysis: scanData.analysis,
-            image: scanData.image, // Base64 or URL
+            image: null, // store image elsewhere (server / IndexedDB)
+
             concerns: scanData.concerns || []
         };
         this.data.scanHistory.unshift(this.data.lastScan);
@@ -54,6 +63,8 @@ class RunovaMemory {
 
     // Add user concern
     addConcern(concern) {
+        if (this.data.userConcerns.some(c => c.text === concern)) return;
+
         const concernData = {
             text: concern,
             timestamp: new Date().toISOString()
@@ -96,8 +107,9 @@ class RunovaMemory {
 
     // Get all data for backend sync
     getAllData() {
-        return this.data;
+        return JSON.parse(JSON.stringify(this.data));
     }
+    
 
     // Clear all data
     clear() {
