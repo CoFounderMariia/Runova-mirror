@@ -22,7 +22,7 @@ class RunovaMemory {
             if (saved) {
                 const parsed = JSON.parse(saved);
                 if (parsed && typeof parsed === 'object') {
-                    this.data = { ...this.data, ...parsed };
+                this.data = { ...this.data, ...parsed };
                 } else {
                     console.error('Invalid memory data format');
                 }

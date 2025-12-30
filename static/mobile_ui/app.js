@@ -1,5 +1,6 @@
 /* ============================================================
-   app.js (FIXED)
+   // NOTE: Camera is used as invisible input only (no UI preview)
+app.js (FIXED)
    - Critical fix: rewritten startLiveAnalysis() to remove the
      "Missing catch or finally after try" fatal syntax error.
    - No API keys needed. No backend changes here.
@@ -313,7 +314,7 @@
       analyzingNow = true;
   
       try {
-        const video = document.getElementById("cameraVideo") || document.getElementById("cam");
+        const video = document.getElementById("cam");
   
         if (!video) {
           console.error("Video element not found");

@@ -14,8 +14,7 @@ class CameraManager {
 
         
         this.video = document.getElementById("cameraVideo");
-        this.canvas = document.getElementById("cameraCanvas");
-        
+                
         if (!this.video || !this.canvas) {
             console.error("❌ cameraVideo / cameraCanvas not found in DOM");
             return false;
