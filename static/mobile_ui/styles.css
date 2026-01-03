@@ -685,3 +685,11 @@ body {
     color: #FF3B30; /* Red */
 }
 
+
+
+/* Force visible camera feed */
+#cameraVideo { opacity: 1 !important; }
+
+
+#cameraVideo { opacity: 1 !important; }
+#cameraVideo { opacity: 1 !important; }

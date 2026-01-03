@@ -8,371 +8,68 @@
 
 <style>
 
-/* ---- VARIABLES ---- */
-
-/* ---- RESET ---- */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-html, body {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-}
-body {
-  width: 100%;
-  height: 100%;
-  background: #f5f5f5; /* any non-black */
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  overflow: hidden;
-}
-
-/* ---- MIRROR FRAME ---- */
-#cam {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;            /* КЛЮЧЕВО */
-  pointer-events: none;
-  transform: scaleX(-1);
-}
-
-
-/* FaceMesh Canvas overlay */
-.face-mesh-canvas {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 1;
-}
-
-/* ---- PERFECT STAND (рендер точный) ---- */
-
-/* ШЕЯ - квадратная форма */
-/* STATUS TEXT */
-#statusText {
-  position: absolute;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 6px 14px;
-  background: rgba(0,0,0,0.6);
-  color: #fff;
-  font-size: 13px;
-  border-radius: 999px;
-}
-
-/* Restart scan button (left of mic button) */
-.restart-scan-button {
-  position: absolute;
-  bottom: 2.5px; /* Centered in the bottom border */
-  right: calc(50% + 90px); /* Positioned left of mic button */
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  border: none;
-  background: linear-gradient(135deg, #ffffff, #e6e6ea);
-  box-shadow:
-    0px 8px 20px rgba(0,0,0,0.12),
-    0 0 0 0.6px rgba(255,255,255,0.8);
-  cursor: pointer;
-  color: #000;
-  transition: background 0.2s ease, box-shadow 0.2s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  z-index: 10;
-}
-
-.restart-scan-icon {
-  width: 14px;
-  height: 14px;
-  stroke: currentColor;
-  fill: none;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.restart-scan-button:hover {
-  background: linear-gradient(135deg, #ffffff, #f0f0f4);
-  box-shadow:
-    0 14px 26px rgba(0,0,0,0.22),
-    0 0 0 1px rgba(255,255,255,0.9);
-}
-
-.restart-scan-button:active {
-  background: linear-gradient(135deg, #f0f0f4, #e0e0e4);
-  box-shadow:
-    0 6px 14px rgba(0,0,0,0.28),
-    0 0 0 0.5px rgba(255,255,255,0.9);
-}
-
-/* Microphone button (left of Analyze button) */
-.mic-button {
-  position: absolute;
-  bottom: 2.5px; /* Centered in the bottom border (12px padding / 2) */
-  right: calc(50% + 60px); /* Positioned left of Analyze button with more gap */
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  border: none;
-  background: linear-gradient(135deg, #ffffff, #e6e6ea);
-  box-shadow:
-    0px 8px 20px rgba(0,0,0,0.12),
-    0 0 0 0.6px rgba(255,255,255,0.8);
-  cursor: pointer;
-  color: #000;
-  transition: background 0.2s ease, box-shadow 0.2s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  z-index: 100;
-  pointer-events: auto;
-}
-
-.mic-icon {
-  width: 12px;
-  height: 12px;
-  stroke: currentColor;
-  fill: none;
-  transition: all 0.2s ease;
-  pointer-events: none; /* Allow clicks to pass through to button */
-}
-
-.mic-button:hover {
-  background: linear-gradient(135deg, #ffffff, #f0f0f4);
-  box-shadow:
-    0 14px 26px rgba(0,0,0,0.22),
-    0 0 0 1px rgba(255,255,255,0.9);
-}
-
-.mic-button:active {
-  background: linear-gradient(135deg, #f0f0f4, #e0e0e4);
-  box-shadow:
-    0 6px 14px rgba(0,0,0,0.28),
-    0 0 0 0.5px rgba(255,255,255,0.9);
-}
-
-.mic-button.recording {
-  background: linear-gradient(135deg, #ff4444, #cc0000);
-  color: #fff;
-  animation: pulse-glow 1.5s ease-in-out infinite;
-  box-shadow:
-    0px 8px 20px rgba(255, 68, 68, 0.4),
-    0 0 0 0.6px rgba(255,255,255,0.8),
-    0 0 20px rgba(255, 68, 68, 0.6);
-}
-
-.mic-button.recording .mic-icon {
-  stroke: #fff;
-}
-
-@keyframes pulse-glow {
-  0%, 100% {
-    box-shadow:
-      0px 8px 20px rgba(255, 68, 68, 0.4),
-      0 0 0 0.6px rgba(255,255,255,0.8),
-      0 0 20px rgba(255, 68, 68, 0.6);
+  /* ---- VARIABLES ---- */
+  :root {
+    --frame: #f4f3f2;
+    --screen-bg-top: #d5d9de;
+    --screen-bg-bottom: #a5aab4;
   }
-  50% {
-    box-shadow:
-      0px 8px 20px rgba(255, 68, 68, 0.6),
-      0 0 0 0.6px rgba(255,255,255,0.8),
-      0 0 30px rgba(255, 68, 68, 0.8);
+
+  /* ---- RESET ---- */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
-}
 
-/* iPhone-style bottom pill button (centered, no movement) */
-.analyze-button {
-  position: absolute;
-  bottom: 2.5px; /* Centered in the bottom border (12px padding / 2) */
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 6px 16px;
-  border-radius: 999px;
-  border: none;
-  background: linear-gradient(135deg, #ffffff, #e6e6ea);
-  box-shadow:
-    0px 8px 20px rgba(0,0,0,0.12),
-    0 0 0 0.6px rgba(255,255,255,0.8);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  cursor: pointer;
-  color: #000;
-  transition: background 0.2s ease, box-shadow 0.2s ease;
-  z-index: 10;
-}
+  body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e7e3e1;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  }
 
-.analyze-button:hover {
-  background: linear-gradient(135deg, #ffffff, #f0f0f4);
-  box-shadow:
-    0 14px 26px rgba(0,0,0,0.22),
-    0 0 0 1px rgba(255,255,255,0.9);
-}
+  /* ---- MIRROR FRAME ---- */
+  #cam {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 1;            /* КЛЮЧЕВО */
+    pointer-events: none;
+    transform: scaleX(-1);
+    z-index: 0;
+  }
 
-.analyze-button:active {
-  background: linear-gradient(135deg, #f0f0f4, #e0e0e4);
-  box-shadow:
-    0 6px 14px rgba(0,0,0,0.28),
-    0 0 0 0.5px rgba(255,255,255,0.9);
-}
+  /* FaceMesh Canvas overlay */
+  .face-mesh-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+  }
 
-/* Scan sunscreen button (right of Analyze button) */
-.scan-sunscreen-button {
-  position: absolute;
-  bottom: 2.5px; /* Centered in the bottom border */
-  left: calc(50% + 60px); /* Positioned right of Analyze button */
-  padding: 6px 16px;
-  border-radius: 999px;
-  border: none;
-  background: linear-gradient(135deg, #ffffff, #e6e6ea);
-  box-shadow:
-    0px 8px 20px rgba(0,0,0,0.12),
-    0 0 0 0.6px rgba(255,255,255,0.8);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  cursor: pointer;
-  color: #000;
-  transition: background 0.2s ease, box-shadow 0.2s ease;
-  z-index: 10;
-}
+  /* ---- PERFECT STAND (рендер точный) ---- */
 
-.scan-sunscreen-button:hover {
-  background: linear-gradient(135deg, #ffffff, #f0f0f4);
-  box-shadow:
-    0 14px 26px rgba(0,0,0,0.22),
-    0 0 0 1px rgba(255,255,255,0.9);
-}
-
-.scan-sunscreen-button:active {
-  background: linear-gradient(135deg, #f0f0f4, #e0e0e4);
-  box-shadow:
-    0 6px 14px rgba(0,0,0,0.28),
-    0 0 0 0.5px rgba(255,255,255,0.9);
-}
-
-.scan-sunscreen-button.scanning {
-  background: linear-gradient(135deg, #4CAF50, #45a049);
-  color: #fff;
-}
-
-/* === RUNOVA SKIN RESULTS PANEL === */
-
-
-#skinResultsPanel {
-  position: absolute;
-  right: 16px;
-  bottom: 30px;
-  width: 26%;
-  min-width: 240px;
-  max-width: 360px;
-  padding: 10px 12px 12px;
-  border-radius: 18px;
-  background: rgba(15, 23, 42, 0.55); /* тёмное полупрозрачное стекло */
-  backdrop-filter: blur(14px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  color: #f9fafb;
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-    sans-serif;
-  opacity: 0;
-  transform: translateY(12px);
-  pointer-events: none;
-  transition: opacity 0.25s ease-out, transform 0.25s ease-out;
-  z-index: 40;
-}
-
-#skinResultsPanel.visible {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-
-.skin-results-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 6px;
-}
-
-.skin-results-title {
-  font-size: 0.78rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  opacity: 0.85;
-}
-
-.skin-results-close {
-  border: none;
-  background: rgba(15, 23, 42, 0.7);
-  color: #e5e7eb;
-  width: 20px;
-  height: 20px;
-  border-radius: 999px;
-  font-size: 13px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.skin-results-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 8px 10px;
-}
-
-.skin-metric {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2px;
-}
-
-.skin-metric-svg {
-  width: 48px;
-  height: 48px;
-}
-
-.skin-metric-bg {
-  fill: none;
-  stroke: rgba(148, 163, 184, 0.35);
-  stroke-width: 2px !important;
-}
-
-.skin-metric-fg {
-  fill: none;
-  stroke-width: 2px !important;
-  stroke-linecap: round;
-  transform: rotate(-90deg);
-  transform-origin: 50% 50%;
-  transition: stroke 0.25s ease-out, stroke-dashoffset 0.25s ease-out;
-}
-
-.skin-metric-score {
-  font-size: 14px;
-  font-weight: 600;
-  fill: #f9fafb;
-}
-
-.skin-metric-label {
-  font-size: 10px;
-  text-align: center;
-  line-height: 1.1;
-  opacity: 0.9;
-}
+  /* ШЕЯ - квадратная форма */
+  /* STATUS TEXT */
+  #statusText {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 6px 14px;
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    font-size: 13px;
+    border-radius: 999px;
+  }
 
 </style>
 
@@ -380,1058 +77,334 @@ body {
 <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/face_mesh.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
+
 <script src="/static/mobile_ui/quality-gate.js"></script>
 <script src="/static/mobile_ui/app.js"></script>
 <script src="/static/mobile_ui/product-manager.js"></script>
 
 </head>
 <body>
-  <script>
-    console.error("🚨 REAL TEMPLATE LOADED:", location.pathname);
-  </script>
 
-<div class="app-root">
+<script>
+  console.error("🚨 REAL TEMPLATE LOADED:", location.pathname);
+</script>
 
-  <!-- Camera: INPUT ONLY, never visible -->
-  <video id="cam" autoplay playsinline muted></video>
-  <canvas id="faceMeshCanvas" class="face-mesh-canvas"></canvas>
+  <div class="mirror-frame">
+    <div class="camera-dot"></div>
 
-  <!-- UI layer -->
-  <div class="ui-layer">
+    <div class="video-screen">
+      <video id="cameraVideo" autoplay playsinline muted></video>
+      <canvas id="faceMeshCanvas" class="face-mesh-canvas" style="display:none;"></canvas>
+    </div>
 
-    <!-- buttons -->
-    <button id="restartButton" class="restart-scan-button">⟳</button>
-    <button id="micButton" class="mic-button">🎤</button>
-    <button id="analyzeSkinBtn" class="analyze-button">Analyze skin</button>
-    <button id="scanSunscreenBtn" class="scan-sunscreen-button">
-      Scan sunscreen
+    <div class="stand-neck"></div>
+    <div class="stand-base"></div>
+
+    <button id="restartButton" class="restart-scan-button" title="Restart">
+      <svg class="restart-scan-icon" viewBox="0 0 24 24">
+        <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/>
+        <path d="M21 3v5h-5"/>
+        <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/>
+        <path d="M3 21v-5h5"/>
+      </svg>
     </button>
 
-    <!-- panels -->
-    <div id="skinResultsPanel"></div>
-    <div id="recommendationsSection"></div>
+    <button id="micButton" class="mic-button" title="Voice recording (tap to toggle)" onclick="console.log('🎤 Mic button clicked!');">
+      <svg class="mic-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 1C10.34 1 9 2.34 9 4V12C9 13.66 10.34 15 12 15C13.66 15 15 13.66 15 12V4C15 2.34 13.66 1 12 1Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M19 10V12C19 15.87 15.87 19 12 19C8.13 19 5 15.87 5 12V10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <line x1="12" y1="19" x2="12" y2="23" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <line x1="8" y1="23" x2="16" y2="23" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+
+    <button id="analyzeSkinBtn" class="analyze-button">Analyze skin</button>
+    <button id="scanSunscreenBtn" class="scan-sunscreen-button">Scan sunscreen</button>
+
+    <div id="recommendationsSection" class="recommendations-section"></div>
+
+    <div id="skinResultsPanel">
+      <div class="skin-results-header">
+        <div class="skin-results-title">Skin analysis</div>
+        <button id="skinResultsClose" class="skin-results-close">&times;</button>
+      </div>
+      <div class="skin-results-grid" id="skinResultsGrid"></div>
+    </div>
 
   </div>
 
-</div>
+<script>
+  // MediaPipe FaceMesh initialization
+  let faceMesh = null;
+  let camera = null;
+  const canvas = document.getElementById("faceMeshCanvas");
+  const canvasCtx = canvas.getContext("2d");
 
+  // Face zones definition (correct indices for MVP)
+  const ZONES = {
+    forehead: [10, 338, 297, 332, 284, 251, 389, 356],
+    nose: [1, 2, 98, 327],
+    left_cheek: [50, 187, 207, 216, 212],
+    right_cheek: [280, 425, 411, 371, 352]
+  };
 
-<div id="statusText">Camera ready</div>
+  const ZONE_COLORS = {
+    forehead: 'rgba(255, 200, 0, 0.3)',
+    nose: 'rgba(0, 255, 200, 0.3)',
+    left_cheek: 'rgba(255, 0, 200, 0.3)',
+    right_cheek: 'rgba(0, 200, 255, 0.3)',
+  };
+
+  function getZoneCoordinates(landmarks, zonePoints) {
+    if (!landmarks || zonePoints.length === 0) return null;
+
+    const points = zonePoints
+      .filter(index => landmarks[index] !== undefined)
+      .map(index => {
+        const lm = landmarks[index];
+        return {
+          x: canvas.width - lm.x * canvas.width,
+          y: lm.y * canvas.height,
+          z: lm.z || 0,
+        };
+      });
+
+    return points.length >= 2 ? points : null;
+  }
+
+  function drawZone(ctx, points, color) {
+    if (!points || points.length < 2) return;
+
+    ctx.beginPath();
+    points.forEach((p, i) => {
+      if (i === 0) ctx.moveTo(p.x, p.y);
+      else ctx.lineTo(p.x, p.y);
+    });
+    ctx.closePath();
+    ctx.fillStyle = color;
+    ctx.globalAlpha = 0.35;
+    ctx.fill();
+    ctx.globalAlpha = 1.0;
+  }
+
+  function computeMissingSunscreenZones(landmarks) {
+    if (!landmarks) return null;
+
+    const sunscreenAnalysis = analyzeSunscreen(landmarks);
+    if (!sunscreenAnalysis) return null;
+
+    const problematicZones = {};
+    for (const [zoneName, zoneIndices] of Object.entries(ZONES)) {
+      if (sunscreenAnalysis[zoneName]) {
+        const status = sunscreenAnalysis[zoneName].status;
+        if (status === "NO_SUNSCREEN" || status === "uneven") {
+          problematicZones[zoneName] = { indices: zoneIndices, status };
+        }
+      }
+    }
+    return problematicZones;
+  }
+
+  function drawZones(currentLandmarks) {
+    if (!currentLandmarks || !sunscreenZones) return;
+
+    for (const [zoneName, zoneData] of Object.entries(sunscreenZones)) {
+      const points = getZoneCoordinates(currentLandmarks, zoneData.indices);
+      if (points && points.length >= 2) {
+        const zoneColor = getZoneStatusColor(zoneData.status);
+        drawZone(canvasCtx, points, zoneColor);
+      }
+    }
+  }
+
+  function analyzeSunscreen(landmarks) {
+    if (!landmarks) return null;
+
+    const camEl = document.getElementById("cameraVideo");
+    const originalTransform = camEl.style.transform;
+    camEl.style.transform = "none";
+
+    const tempCanvas = document.createElement("canvas");
+    tempCanvas.width = canvas.width;
+    tempCanvas.height = canvas.height;
+    const tempCtx = tempCanvas.getContext("2d");
+    tempCtx.drawImage(camEl, 0, 0, tempCanvas.width, tempCanvas.height);
+    const imageData = tempCtx.getImageData(0, 0, tempCanvas.width, tempCanvas.height);
+
+    camEl.style.transform = originalTransform || "scaleX(-1)";
+
+    const sunscreenAnalysis = {};
+    for (const [zoneName, zoneIndices] of Object.entries(ZONES)) {
+      const points = getZoneCoordinates(landmarks, zoneIndices);
+      if (points) {
+        const variance = analyzeZone(imageData, points);
+        const status = getSunscreenStatus(variance);
+        sunscreenAnalysis[zoneName] = { variance, status };
+      }
+    }
+    return sunscreenAnalysis;
+  }
+
+  function analyzeZone(imageData, points) {
+    if (!points || points.length === 0) return null;
+
+    let variance = 0;
+    let mean = 0;
+    let validPoints = 0;
+
+    points.forEach(p => {
+      const x = Math.floor(p.x);
+      const y = Math.floor(p.y);
+      if (x >= 0 && x < imageData.width && y >= 0 && y < imageData.height) {
+        const i = (y * imageData.width + x) * 4;
+        const brightness = (imageData.data[i] + imageData.data[i + 1] + imageData.data[i + 2]) / 3;
+        mean += brightness;
+        validPoints++;
+      }
+    });
+
+    if (validPoints === 0) return null;
+    mean /= validPoints;
+
+    points.forEach(p => {
+      const x = Math.floor(p.x);
+      const y = Math.floor(p.y);
+      if (x >= 0 && x < imageData.width && y >= 0 && y < imageData.height) {
+        const i = (y * imageData.width + x) * 4;
+        const brightness = (imageData.data[i] + imageData.data[i + 1] + imageData.data[i + 2]) / 3;
+        variance += Math.pow(brightness - mean, 2);
+      }
+    });
+
+    variance /= validPoints;
+    return variance;
+  }
+
+  function getSunscreenStatus(variance) {
+    if (variance === null || variance === undefined) return null;
+    if (variance <= 120) return "OK";
+    if (variance <= 200) return "uneven";
+    return "NO_SUNSCREEN";
+  }
+
+  function getZoneStatusColor(status) {
+    switch(status) {
+      case "OK": return "rgba(100, 255, 100, 1)";
+      case "uneven": return "rgba(255, 255, 100, 1)";
+      case "NO_SUNSCREEN": return "rgba(255, 100, 100, 1)";
+      default: return "rgba(255, 255, 255, 1)";
+    }
+  }
+
+  let mode = "idle";
+  let lockedLandmarks = null;
+  let sunscreenZones = null;
+
+  function onResults(results) {
+    if (mode === "idle") return;
+
+    canvasCtx.save();
+    canvasCtx.clearRect(0, 0, canvas.width, canvas.height);
+
+    if (mode === "scanning" && results.multiFaceLandmarks && results.multiFaceLandmarks.length > 0) {
+      lockedLandmarks = results.multiFaceLandmarks[0];
+      sunscreenZones = computeMissingSunscreenZones(lockedLandmarks);
+      mode = "locked";
+    }
+
+    if (mode === "locked" && results.multiFaceLandmarks && results.multiFaceLandmarks.length > 0) {
+      const currentLandmarks = results.multiFaceLandmarks[0];
+      drawZones(currentLandmarks);
+    }
+
+    canvasCtx.restore();
+  }
+
+  let cameraStream = null;
+
+  async function startCamera() {
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({
+        video: { facingMode: "user" },
+        audio: false
+      });
+
+      cameraStream = stream;
+
+      const camEl = document.getElementById("cameraVideo");
+      camEl.srcObject = stream;
+      camEl.muted = true;
+      await camEl.play();
+
+      faceMesh = new FaceMesh({
+        locateFile: (file) => `https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/${file}`,
+      });
+
+      faceMesh.setOptions({
+        maxNumFaces: 1,
+        refineLandmarks: true,
+        minDetectionConfidence: 0.5,
+        minTrackingConfidence: 0.5,
+      });
+
+      faceMesh.onResults(onResults);
+
+      camEl.onloadedmetadata = () => {
+        canvas.width = camEl.videoWidth;
+        canvas.height = camEl.videoHeight;
+      };
+
+      camera = new Camera(camEl, {
+        onFrame: async () => {
+          await faceMesh.send({ image: camEl });
+        },
+        width: 640,
+        height: 480,
+      });
+      camera.start();
+
+    } catch (err) {
+      console.error("Camera error:", err);
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    startCamera();
+  });
+</script>
 
 <script>
-/* camera + retell logic — unchanged */
-</script>
-  
-    <script>
-      // MediaPipe FaceMesh initialization
-      let faceMesh = null;
-      let camera = null;
-      const canvas = document.getElementById("faceMeshCanvas");
-      const canvasCtx = canvas.getContext("2d");
+  (function hardRemoveCameraReady() {
+    const BAD_IDS = new Set(["statusText", "cameraStatus"]);
+    const BAD_CLASSES = new Set(["camera-status", "camera-ready"]);
+    const BAD_TEXTS = new Set(["camera ready", "camera error", "cameraready", "cameraerror"]);
 
-      // Face zones definition (correct indices for MVP)
-      const ZONES = {
-        forehead: [10, 338, 297, 332, 284, 251, 389, 356],
-        nose: [1, 2, 98, 327],
-        left_cheek: [50, 187, 207, 216, 212],
-        right_cheek: [280, 425, 411, 371, 352]
-      };
+    function kill(el) {
+      if (!el) return;
+      try { el.remove(); } catch {}
+    }
 
-      // Zone colors (semi-transparent for overlay)
-      const ZONE_COLORS = {
-        forehead: 'rgba(255, 200, 0, 0.3)',
-        nose: 'rgba(0, 255, 200, 0.3)',
-        left_cheek: 'rgba(255, 0, 200, 0.3)',
-        right_cheek: 'rgba(0, 200, 255, 0.3)',
-      };
+    function scan(root) {
+      if (!root || !root.querySelectorAll) return;
 
-      // Get zone coordinates from landmarks
-      // Video is un-mirrored via CSS (scaleX(-1) compensates camera's default mirroring)
-      // Canvas is NOT mirrored, so we need to invert X coordinates to match video
-      function getZoneCoordinates(landmarks, zonePoints) {
-        if (!landmarks || zonePoints.length === 0) return null;
-        
-        const points = zonePoints
-          .filter(index => landmarks[index] !== undefined)
-          .map(index => {
-            const lm = landmarks[index];
-            // Invert X because video is un-mirrored via CSS but canvas is not
-            return {
-              x: canvas.width - lm.x * canvas.width,
-              y: lm.y * canvas.height,
-              z: lm.z || 0,
-            };
-          });
-        
-        return points.length >= 2 ? points : null;
-      }
+      root.querySelectorAll("*").forEach((el) => {
+        const id = (el.id || "").trim();
+        if (BAD_IDS.has(id)) return kill(el);
 
-      // Draw a zone polygon on canvas
-      function drawZone(ctx, points, color) {
-        if (!points || points.length < 2) return;
-        
-        ctx.beginPath();
-        points.forEach((p, i) => {
-          if (i === 0) ctx.moveTo(p.x, p.y);
-          else ctx.lineTo(p.x, p.y);
-        });
-        ctx.closePath();
-        ctx.fillStyle = color;
-        ctx.globalAlpha = 0.35;
-        ctx.fill();
-        ctx.globalAlpha = 1.0; // Reset alpha
-      }
-      
-      // Compute missing sunscreen zones (returns zone indices)
-      function computeMissingSunscreenZones(landmarks) {
-        if (!landmarks) return null;
-        
-        // Analyze sunscreen for all zones
-        const sunscreenAnalysis = analyzeSunscreen(landmarks);
-        if (!sunscreenAnalysis) return null;
-        
-        const problematicZones = {};
-        for (const [zoneName, zoneIndices] of Object.entries(ZONES)) {
-          if (sunscreenAnalysis[zoneName]) {
-            const status = sunscreenAnalysis[zoneName].status;
-            // Only store problematic zones (NO_SUNSCREEN or uneven)
-            if (status === "NO_SUNSCREEN" || status === "uneven") {
-              problematicZones[zoneName] = {
-                indices: zoneIndices,
-                status: status,
-              };
-            }
-          }
-        }
-        
-        return problematicZones;
-      }
-      
-      // Draw zones that follow current landmarks (zones "stick" to face)
-      function drawZones(currentLandmarks) {
-        if (!currentLandmarks || !sunscreenZones) return;
-        
-        for (const [zoneName, zoneData] of Object.entries(sunscreenZones)) {
-          const points = getZoneCoordinates(currentLandmarks, zoneData.indices);
-          if (points && points.length >= 2) {
-            const zoneColor = getZoneStatusColor(zoneData.status);
-            drawZone(canvasCtx, points, zoneColor);
-          }
-        }
-      }
-      
-      // Analyze sunscreen for all zones
-      function analyzeSunscreen(landmarks) {
-        if (!landmarks) return null;
-        
-        // Get image data from video for analysis
-        // IMPORTANT: Temporarily disable CSS un-mirror before capture
-        const originalTransform = cam.style.transform;
-        cam.style.transform = "none";
-        
-        const tempCanvas = document.createElement("canvas");
-        tempCanvas.width = canvas.width;
-        tempCanvas.height = canvas.height;
-        const tempCtx = tempCanvas.getContext("2d");
-        tempCtx.drawImage(cam, 0, 0, tempCanvas.width, tempCanvas.height);
-        const imageData = tempCtx.getImageData(0, 0, tempCanvas.width, tempCanvas.height);
-        
-        // Restore CSS un-mirror
-        cam.style.transform = originalTransform || "scaleX(-1)";
-        
-        const sunscreenAnalysis = {};
-        for (const [zoneName, zoneIndices] of Object.entries(ZONES)) {
-          const points = getZoneCoordinates(landmarks, zoneIndices);
-          if (points) {
-            const variance = analyzeZone(imageData, points);
-            const status = getSunscreenStatus(variance);
-            sunscreenAnalysis[zoneName] = {
-              variance: variance,
-              status: status,
-            };
-          }
-        }
-        
-        return sunscreenAnalysis;
-      }
-      
+        const classList = Array.from(el.classList || []);
+        if (classList.some(c => BAD_CLASSES.has(c))) return kill(el);
 
-      // Get all face zones data for analysis
-      function getFaceZones(landmarks) {
-        const zones = {};
-        for (const [zoneName, zonePoints] of Object.entries(ZONES)) {
-          zones[zoneName] = getZoneCoordinates(landmarks, zonePoints);
-        }
-        return zones;
-      }
-
-      // Analyze zone for sunscreen detection
-      // Returns variance (lower = more uniform = sunscreen likely present)
-      function analyzeZone(imageData, points) {
-        if (!points || points.length === 0) return null;
-        
-        let variance = 0;
-        let mean = 0;
-        let validPoints = 0;
-
-        // Calculate mean brightness
-        points.forEach(p => {
-          const x = Math.floor(p.x);
-          const y = Math.floor(p.y);
-          
-          // Check bounds
-          if (x >= 0 && x < imageData.width && y >= 0 && y < imageData.height) {
-            const i = (y * imageData.width + x) * 4;
-            const brightness = (imageData.data[i] + 
-                               imageData.data[i + 1] + 
-                               imageData.data[i + 2]) / 3;
-            mean += brightness;
-            validPoints++;
-          }
-        });
-
-        if (validPoints === 0) return null;
-        mean /= validPoints;
-
-        // Calculate variance
-        points.forEach(p => {
-          const x = Math.floor(p.x);
-          const y = Math.floor(p.y);
-          
-          if (x >= 0 && x < imageData.width && y >= 0 && y < imageData.height) {
-            const i = (y * imageData.width + x) * 4;
-            const brightness = (imageData.data[i] + 
-                               imageData.data[i + 1] + 
-                               imageData.data[i + 2]) / 3;
-            variance += Math.pow(brightness - mean, 2);
-          }
-        });
-
-        variance /= validPoints;
-        return variance; // ↑ variance = скорее НЕТ sunscreen
-      }
-
-      // Get sunscreen status for a zone based on variance
-      // Returns: "OK" (green), "uneven" (yellow), "NO_SUNSCREEN" (red)
-      function getSunscreenStatus(variance) {
-        if (variance === null || variance === undefined) return null;
-        
-        // Пороги:
-        // variance <= 120: OK (зелёный) - sunscreen обнаружен
-        // 120 < variance <= 200: uneven (жёлтый) - неравномерное покрытие
-        // variance > 200: NO_SUNSCREEN (красный) - нет sunscreen
-        if (variance <= 120) return "OK";
-        if (variance <= 200) return "uneven";
-        return "NO_SUNSCREEN";
-      }
-
-      // Get color for zone status
-      function getZoneStatusColor(status) {
-        switch(status) {
-          case "OK":
-            return "rgba(100, 255, 100, 1)"; // ✅ зелёный
-          case "uneven":
-            return "rgba(255, 255, 100, 1)"; // ⚠️ жёлтый
-          case "NO_SUNSCREEN":
-            return "rgba(255, 100, 100, 1)"; // ❌ красный
-          default:
-            return "rgba(255, 255, 255, 1)";
-        }
-      }
-
-      // Mode states: "idle" | "scanning" | "locked"
-      let mode = "idle";
-      let lockedLandmarks = null;
-      let sunscreenZones = null; // Store zone indices, not screen coordinates
-      
-      // Voice notification for sunscreen status
-      let lastVoiceNotificationTime = 0;
-      const VOICE_NOTIFICATION_THROTTLE = 5000; // 5 seconds between notifications
-
-      function onResults(results) {
-        // In idle mode: do nothing (canvas is hidden, video is visible)
-        if (mode === "idle") return;
-        
-        canvasCtx.save();
-        canvasCtx.clearRect(0, 0, canvas.width, canvas.height);
-        
-        // NO scale / translate here - canvas is NOT mirrored
-        
-        if (mode === "scanning" && results.multiFaceLandmarks && results.multiFaceLandmarks.length > 0) {
-          // Step 1: Fix landmarks (save geometry, not screen coordinates)
-          lockedLandmarks = results.multiFaceLandmarks[0];
-          
-          // Step 2: Compute zones relative to landmarks (store indices)
-          sunscreenZones = computeMissingSunscreenZones(lockedLandmarks);
-          
-          // Step 3: Speak results
-          if (sunscreenZones) {
-            const problematicZoneNames = Object.keys(sunscreenZones).map(name => name.replace(/_/g, ' '));
-            if (problematicZoneNames.length > 0) {
-              const zoneNames = problematicZoneNames.join(" and ");
-              
-              const sunscreenPhrases = [
-                `I'm seeing low sunscreen coverage on your ${zoneNames}.`,
-                `Some areas need more sunscreen — especially your ${zoneNames}.`,
-                `Your sunscreen coverage looks uneven on your ${zoneNames}.`,
-                `Let's add more sunscreen to your ${zoneNames}.`,
-                `I'd recommend reapplying sunscreen on your ${zoneNames}.`,
-                `Your ${zoneNames} could use a bit more sunscreen.`,
-                `There's less sunscreen coverage on your ${zoneNames}.`
-              ];
-              
-              const randomPhrase = sunscreenPhrases[Math.floor(Math.random() * sunscreenPhrases.length)];
-              
-              // Use ElevenLabs voice via backend (with fallback to browser TTS)
-              if (typeof stopVoice === 'function') {
-                stopVoice(); // Stop any current voice
-              }
-              
-              // Try ElevenLabs first (if available)
-              if (typeof window !== 'undefined' && typeof window.generateAndPlayAudio === 'function') {
-                window.generateAndPlayAudio(randomPhrase);
-              } else if (typeof speak === 'function') {
-                // Fallback to browser TTS
-                speak(randomPhrase);
-              } else {
-                // Last resort: direct SpeechSynthesis
-                const msg = new SpeechSynthesisUtterance(randomPhrase);
-                speechSynthesis.speak(msg);
-              }
-            }
-          }
-          
-          // Step 4: Switch to locked mode
-          mode = "locked";
-        }
-        
-        // Draw zones (landmarks) - canvas is NOT mirrored, coordinates are NOT inverted
-        if (mode === "locked" && results.multiFaceLandmarks && results.multiFaceLandmarks.length > 0) {
-          const currentLandmarks = results.multiFaceLandmarks[0];
-          drawZones(currentLandmarks);
-        }
-        
-        canvasCtx.restore();
-      }
-
-      // Store camera stream globally to reuse audio track
-      let cameraStream = null;
-      
-      async function startCamera() {
-        try {
-          const stream = await navigator.mediaDevices.getUserMedia({
-            video: { facingMode: "user" },
-            audio: true
-          });
-          
-          // Store stream globally for reuse
-          cameraStream = stream;
-      
-          const cam = document.getElementById("cam");
-          cam.srcObject = stream;
-          cam.muted = true; // Mute video to prevent audio feedback
-          await cam.play();
-      
-          // Initialize FaceMesh
-          faceMesh = new FaceMesh({
-            locateFile: (file) =>
-              `https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/${file}`,
-          });
-
-          faceMesh.setOptions({
-            maxNumFaces: 1,
-            refineLandmarks: true,
-            minDetectionConfidence: 0.5,
-            minTrackingConfidence: 0.5,
-            // NO selfieMode - FaceMesh data is NOT mirrored
-          });
-
-          faceMesh.onResults(onResults);
-
-          // Set canvas size to match video exactly 1:1 (ONLY ONCE when metadata loads)
-          cam.onloadedmetadata = () => {
-            canvas.width = cam.videoWidth;
-            canvas.height = cam.videoHeight;
-          };
-
-          // Initialize camera for FaceMesh
-          camera = new Camera(cam, {
-            onFrame: async () => {
-              await faceMesh.send({ image: cam });
-            },
-            width: 640,
-            height: 480,
-          });
-          camera.start();
-
-          document.getElementById("statusText").innerText = "Camera ready";
-        } catch (err) {
-          console.error("Camera error:", err);
-          document.getElementById("statusText").innerText = "Camera error";
-        }
-      }
-      
-      document.addEventListener("DOMContentLoaded", () => {
-        startCamera();
-        
-        // Hide skin analysis panel
-        function hideSkinAnalysisPanel() {
-          const panel = document.getElementById("skinResultsPanel");
-          if (panel) {
-            panel.classList.remove("visible");
-          }
-        }
-        
-        // Hide recommendations panel
-        function hideRecommendationsPanel() {
-          const recommendationsSection = document.getElementById("recommendationsSection");
-          if (recommendationsSection) {
-            recommendationsSection.style.display = "none";
-          }
-        }
-        
-        // Clear canvas overlays
-        function clearCanvasOverlays() {
-          canvasCtx.clearRect(0, 0, canvas.width, canvas.height);
-          canvas.style.display = "none";
-        }
-        
-        // Restart all function (return to idle mode)
-        function restartAll() {
-          // Voice - block and stop first
-          if (typeof window !== 'undefined') {
-            window.voiceAllowed = false;
-          }
-          if (typeof stopVoice === 'function') {
-            stopVoice();
-          }
-          
-          // UI
-          hideSkinAnalysisPanel();
-          hideRecommendationsPanel();
-          
-          // States
-          mode = "idle";
-          lockedLandmarks = null;
-          sunscreenZones = null;
-          
-          // Canvas
-          clearCanvasOverlays();
-          
-          // Camera - no transform needed (no mirroring)
-          
-          // Re-enable voice after reset
-          setTimeout(() => {
-            if (typeof window !== 'undefined') {
-              window.voiceAllowed = true;
-            }
-          }, 100); // Allow voice only after reset
-        }
-        
-        // Set up sunscreen scan button
-        const scanBtn = document.getElementById("scanSunscreenBtn");
-        if (scanBtn) {
-          scanBtn.onclick = () => {
-            // Stop voice before scan
-            if (typeof stopVoice === 'function') {
-              stopVoice();
-            }
-            
-            mode = "scanning";
-            lockedLandmarks = null;
-            sunscreenZones = null;
-            
-            // Show canvas
-            canvas.style.display = "block";
-          };
-        }
-        
-        // Set up restart button (always visible)
-        const restartButton = document.getElementById("restartButton");
-        if (restartButton) {
-          restartButton.addEventListener("click", () => {
-            restartAll(); // Reset states
-          });
-        }
-        
-        // Microphone button toggle (syncs with V key) - MUST be inside DOMContentLoaded
-        // Wait for app.js to load before attaching handler
-        function attachMicButtonHandler() {
-          const micButton = document.getElementById('micButton');
-          if (micButton) {
-            if (typeof window.startRecording === 'function' && typeof window.stopRecording === 'function') {
-              console.log('✅ Mic button found, app.js loaded, attaching click handler');
-              micButton.addEventListener('click', function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                console.log('🎤 Mic button clicked!');
-                
-                // Toggle recording state - sync with V key behavior
-                const isCurrentlyRecording = window.isRecording || micButton.classList.contains('recording');
-                
-                if (isCurrentlyRecording) {
-                  // Stop recording (same as V key up)
-                  console.log('🎤 Mic button: Stop recording');
-                  window.stopRecording();
-                } else {
-                  // Start recording (same as V key down)
-                  console.log('🎤 Mic button: Start recording');
-                  window.startRecording().catch(err => {
-                    console.error('❌ startRecording() failed:', err);
-                  });
-                }
-              });
-            } else {
-              console.warn('⚠️ app.js not loaded yet, retrying...');
-              setTimeout(attachMicButtonHandler, 100);
-            }
-          } else {
-            console.error('❌ Mic button not found in DOM');
-          }
-        }
-        attachMicButtonHandler();
+        const t = ((el.textContent || "").trim().toLowerCase());
+        if (t == "camera ready" || t == "cameraready" || t == "camera error" || t == "cameraerror") return kill(el);
       });
-      </script>
-<style>
-  .loading {
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 8px 16px;
-    background: rgba(0,0,0,0.7);
-    color: white;
-    border-radius: 12px;
-    font-size: 14px;
-  }
-  .hidden { display: none; }
-  </style>
-<div id="loadingIndicator" class="loading hidden">Listening...</div>
-<div id="loadingOverlay" class="hidden">Listening...</div>
-
-<style>
-#loadingOverlay {
-  position: absolute;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 8px 16px;
-  background: rgba(0,0,0,0.7);
-  color: white;
-  border-radius: 12px;
-  font-size: 14px;
-}
-
-.hidden {
-  display: none;
-}
-
-#loadingOverlay.active {
-  display: block;
-}
-
-/* Product Recommendations Section - Horizontal Layout (Reduced Size) */
-.recommendations-section,
-.recommendations-popup {
-  position: absolute;
-  bottom: 40px; /* ✅ Позиция возвращена как было до последнего коммита */
-  left: 50%;
-  transform: translateX(-50%);
-  /* Smaller width as before: 320px to fit 3 cards without cropping */
-  width: 320px;
-  max-width: 320px; /* Ensure it never exceeds this */
-  padding: 10px 8px 10px 8px; /* padding-top: 6px (было 0px) */
-  background: rgba(15, 23, 42, 0.55); /* Same transparency as results box */
-  backdrop-filter: blur(12px);
-  border-radius: 10px;
-  z-index: 999; /* Below button hover effects but above video */
-  display: none;
-  overflow: visible; /* ✅ Parent does NOT clip, cards are fully visible inside */
-  height: auto;
-  max-height: 195px; /* оставляем как есть */
-  box-sizing: border-box;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-/* Block should only show when explicitly set to display via JavaScript */
-.recommendations-section[style*="display: block"],
-.recommendations-section[style*="display:block"],
-.recommendations-section[style*="display: flex"] {
-  display: flex !important; /* Use flex for layout */
-  flex-direction: column; /* Важно для правильного layout */
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-/* компактный header */
-/* компактный header */
-.recommendations-header {
-  padding-top: 2px; /* было больше */
-  padding-bottom: 4px;
-  margin: 0;
-  height: auto;
-  min-height: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  z-index: 1000; /* Ensure close button is above products */
-  flex-shrink: 0;
-  overflow: visible; /* Allow header content to be visible */
-}
-
-/* крестик не меняем, но фиксируем внутри header */
-.close-recommendations,
-#recommendationsClose,
-.recommendations-header .skin-results-close {
-  position: absolute;
-  right: -6px; /* еще правее - ближе к краю */
-  top: -6px; /* еще выше - ближе к верху */
-}
-
-/* Стили для крестика в recommendations - меньше и элегантнее */
-.recommendations-close,
-.recommendations-header .skin-results-close,
-#recommendationsClose {
-  position: absolute; /* сохраняем absolute positioning */
-  right: -6px; /* еще правее - ближе к краю */
-  top: -7px; /* еще выше - ближе к верху */
-  width: 18px; /* меньше по размеру */
-  height: 18px;
-  font-size: 12px; /* пропорционально меньше */
-  border-radius: 50%;
-  opacity: 0.8;
-}
-
-.recommendations-close:hover,
-.recommendations-header .skin-results-close:hover,
-#recommendationsClose:hover {
-  opacity: 1;
-}
-
-.recommendations-title {
-  color: white;
-  font-size: 10px;
-  font-weight: 600;
-  margin: -10px 0 0 0; /* margin-top: -10px - поднимаем выше */
-  padding: 0;
-  text-align: center;
-  min-height: unset; /* важно */
-  line-height: 1;
-  flex-shrink: 0;
-  height: auto;
-}
-
-/* контейнер карточек занимает всё оставшееся */
-.products-container {
-  display: flex !important;
-  gap: 4px; /* Reduced gap to fit cards better */
-  flex: 1; /* вместо фиксированной height */
-  height: auto; /* важно */
-  margin-top: -10px; /* маленький зазор под заголовком - карточки ближе к заголовку */
-  margin-bottom: 0px;
-  align-items: stretch; /* ✅ Растягиваем все карточки до одинаковой высоты */
-  justify-content: center; /* Center cards horizontally */
-  padding: 15px; /* добавляет безопасную зону */
-  overflow: visible; /* КРИТИЧНО - карточки не обрезаются при hover */
-  width: 100%; /* Fill parent width */
-  visibility: visible !important;
-  opacity: 1 !important;
-  flex-wrap: nowrap; /* Keep cards in one row, no wrapping */
-  box-sizing: border-box;
-}
-
-.products-container::-webkit-scrollbar {
-  height: 4px;
-}
-
-.products-container::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.products-container::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 2px;
-}
-
-.product-card {
-  flex: 0 0 auto;
-  /* Fixed width: (320px popup - 10px padding - 6px gaps) / 3 = 101.33px, use 100px for safety */
-  width: 100px;
-  min-width: 100px;
-  max-width: 100px;
-  display: flex !important;
-  flex-direction: column;
-  background: rgba(255, 255, 255, 0.95);
-  border: 1px solid rgba(0, 0, 0, 0.15); /* Dark border like in the image */
-  border-radius: 12px; /* Increased border radius */
-  padding: 4px 4px 6px 4px; /* padding-bottom: 6px - меньше внутреннего воздуха */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease;
-  will-change: transform;
-  text-decoration: none;
-  color: inherit;
-  cursor: pointer;
-  box-sizing: border-box;
-  overflow: visible; /* ✅ Parent does NOT clip */
-  height: 175px; /* увеличено - карточки выше */
-  align-self: stretch; /* ✅ Растягиваем карточку до высоты самой высокой */
-  font-size: 10px; /* ✅ КЛЮЧЕВО - уменьшен базовый шрифт */
-  line-height: 1.2; /* ✅ */
-  position: relative;
-  visibility: visible !important;
-  opacity: 1 !important;
-  z-index: 1;
-}
-
-.product-card[data-clickable="true"] {
-  cursor: pointer;
-}
-
-.product-card[data-clickable="false"] {
-  cursor: default;
-}
-
-.product-card:hover {
-  transform: scale(1.05);
-  z-index: 2;
-}
-
-/* Image container wrapper - proportionally scaled for taller cards */
-.product-image-container {
-  width: 100%; /* Full width of card */
-  height: 85px; /* Fixed height to match image - пропорционально уменьшено */
-  margin: 0 auto 6px auto; /* Margin below image */
-  display: flex !important;
-  align-items: center;
-  justify-content: center;
-  background: #f5f5f5;
-  border-radius: 4px;
-  box-sizing: border-box;
-  flex-shrink: 0;
-  position: relative;
-  overflow: hidden; /* Contain image inside container */
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-.product-image {
-  /* Image dimensions - fixed height only for image */
-  width: 100%; /* Full width of container */
-  height: 85px; /* было выше - поджимаем пропорционально */
-  object-fit: contain; /* пропорциональное масштабирование */
-  object-position: center; /* Center the image both horizontally and vertically */
-  border-radius: 4px;
-  display: block !important;
-  flex-shrink: 0;
-  box-sizing: border-box;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-.product-info {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  overflow: visible; /* Allow all content to be visible, no clipping */
-  min-height: 0; /* Allow flex shrinking */
-}
-
-.product-name {
-  font-size: 8px; /* ✅ почти как серый текст */
-  font-weight: 600;
-  color: #000;
-  margin-bottom: 4px; /* ✅ Компактнее */
-  line-height: 1.2; /* ✅ */
-  /* ✅ Ограничиваем название до 2 строк максимум */
-  display: -webkit-box;
-  -webkit-line-clamp: 2; /* максимум 2 строки */
-  -webkit-box-orient: vertical;
-  overflow: hidden; /* для line-clamp */
-  flex-shrink: 0;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-.product-price {
-  font-size: 8px; /* ✅ почти как серый текст */
-  font-weight: 700;
-  color: #007AFF;
-  margin: 3px 0; /* цена по середине между названием и описанием */
-  flex-shrink: 0;
-  line-height: 1.2;
-  white-space: normal; /* Text wrapping */
-  overflow: visible;
-  display: block !important; /* Ensure price is visible */
-  visibility: visible !important; /* Ensure price is visible */
-  opacity: 1 !important; /* Ensure price is visible */
-  height: auto;
-}
-
-.product-description {
-  font-size: 8px; /* ✅ уменьшен */
-  color: #666;
-  margin-top: 2px; /* описание чуть пониже */
-  margin-bottom: 0;
-  line-height: 1.2; /* как у названия - меньше расстояние между строчками */
-  /* ✅ Светло-серый текст - максимум 3 строки */
-  display: -webkit-box;
-  -webkit-line-clamp: 3; /* максимум 3 строки */
-  -webkit-box-orient: vertical;
-  overflow: hidden; /* для line-clamp */
-  flex-shrink: 1;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-</style>
-<button id="voiceButton" style="display:none;"></button>
-<button id="scanButton" style="display:none;"></button>
- <script>
-// === SKIN ANALYSIS WITH CAMERA SNAPSHOT ===
-
-// 1. Reference UI elements
-const analyzeBtn = document.getElementById("analyzeSkinBtn");
-const video = document.getElementById("cam");
-const statusText = document.getElementById("statusText");
-
-// 2. Hidden canvas for capturing a frame
-
-  (function () {
-    const video = document.getElementById("cam"); // камера
-    const analyzeBtn = document.getElementById("analyzeSkinBtn"); // твоя кнопка
-    const panel = document.getElementById("skinResultsPanel");
-    const grid = document.getElementById("skinResultsGrid");
-    const closeBtn = document.getElementById("skinResultsClose");
-
-    if (!video || !analyzeBtn || !panel || !grid) {
-      console.warn("Skin analysis UI: some elements not found");
-      return;
     }
 
-    const METRICS = [
-      { key: "texture", label: "Texture" },
-      { key: "acne", label: "Acne" },
-      { key: "dark_circles", label: "Dark Circles" },
-      { key: "redness", label: "Redness" },
-      { key: "oiliness", label: "Oiliness" },
-      { key: "moisture", label: "Moisture" },
-      { key: "pores", label: "Pores" },
-      { key: "eye_bags", label: "Eye bags" },
-      { key: "radiance", label: "Radiance" },
-      { key: "wrinkles", label: "Wrinkles" },
-      { key: "firmness", label: "Firmness" },
-      { key: "spots", label: "Spots" }
-    ];
+    scan(document);
 
-    function getScoreColor(score) {
-      if (score <= 30) return "#ff4d6d"; // розово-красный – плохо
-      if (score <= 60) return "#ffb347"; // оранжевый – средне
-      if (score <= 80) return "#40e0d0"; // бирюзовый – хорошо
-      return "#3b82f6"; // сине-зелёный – супер
-    }
-
-    // Генерирует градиент на основе значения метрики
-    function getValueBasedGradient(score) {
-      let color1, color2;
-      
-      if (score < 80) {
-        // Плохое состояние: жёлто-оранжевый градиент
-        if (score < 40) {
-          // Очень плохо: оранжево-красный
-          color1 = '#FF6B35';
-          color2 = '#FF8C42';
-        } else if (score < 70) {
-          // Средне: жёлто-оранжевый
-          const t = (score - 40) / 30;
-          color1 = interpolateColor('#FF8C42', '#FFB347', t);
-          color2 = interpolateColor('#FFB347', '#FFD700', t);
-        } else {
-          // Borderline (70-80): градиент от зелёного → жёлтого
-          const t = (score - 70) / 10;
-          color1 = interpolateColor('#10B981', '#22C55E', t);
-          color2 = interpolateColor('#22C55E', '#FFD700', t);
-        }
-      } else {
-        // Хорошее состояние: зелёно-синий градиент
-        if (score < 90) {
-          // Хорошо: зелёно-голубой
-          color1 = '#10B981';
-          color2 = '#06B6D4';
-        } else {
-          // Отлично: сине-голубой (самый холодный)
-          color1 = '#06B6D4';
-          color2 = '#3B82F6';
-        }
-      }
-      
-      return { color1, color2 };
-    }
-
-    // Интерполирует между двумя цветами
-    function interpolateColor(color1, color2, factor) {
-      const hex1 = color1.replace('#', '');
-      const hex2 = color2.replace('#', '');
-      
-      const r1 = parseInt(hex1.substr(0, 2), 16);
-      const g1 = parseInt(hex1.substr(2, 2), 16);
-      const b1 = parseInt(hex1.substr(4, 2), 16);
-      
-      const r2 = parseInt(hex2.substr(0, 2), 16);
-      const g2 = parseInt(hex2.substr(2, 2), 16);
-      const b2 = parseInt(hex2.substr(4, 2), 16);
-      
-      const r = Math.round(r1 + (r2 - r1) * factor);
-      const g = Math.round(g1 + (g2 - g1) * factor);
-      const b = Math.round(b1 + (b2 - b1) * factor);
-      
-      return `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`;
-    }
-
-    function showPanel(scores) {
-      grid.innerHTML = "";
-      const radius = 22;
-      const circumference = 2 * Math.PI * radius;
-
-      METRICS.forEach((m, index) => {
-        const raw = scores ? scores[m.key] : null;
-        if (raw == null) return;
-
-        const score = Math.max(0, Math.min(100, Math.round(raw)));
-        const offset = circumference - (score / 100) * circumference;
-        
-        // Генерируем градиент на основе значения
-        const gradient = getValueBasedGradient(score);
-        const gradientId = `mirror-gradient-${Date.now()}-${index}`;
-
-        const item = document.createElement("div");
-        item.className = "skin-metric";
-        item.innerHTML = `
-          <svg viewBox="0 0 60 60" class="skin-metric-svg">
-            <defs>
-              <linearGradient id="${gradientId}" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" style="stop-color:${gradient.color1};stop-opacity:1" />
-                <stop offset="100%" style="stop-color:${gradient.color2};stop-opacity:1" />
-              </linearGradient>
-            </defs>
-            <circle class="skin-metric-bg" cx="30" cy="30" r="${radius}" stroke-width="2"></circle>
-            <circle class="skin-metric-fg"
-                    cx="30" cy="30" r="${radius}"
-                    stroke="url(#${gradientId})"
-                    stroke-width="2"
-                    stroke-dasharray="${circumference}"
-                    stroke-dashoffset="${offset}"
-                    data-score="${score}"></circle>
-            <text x="50%" y="50%"
-                  dominant-baseline="middle"
-                  text-anchor="middle"
-                  class="skin-metric-score">${score}</text>
-          </svg>
-          <div class="skin-metric-label">${m.label}</div>
-        `;
-        grid.appendChild(item);
-      });
-
-      panel.classList.add("visible");
-    }
-
-    function hidePanel() {
-      panel.classList.remove("visible");
-    }
-    function analyzeSkin() {
-      // Stop voice before showing analysis
-      if (typeof stopVoice === 'function') {
-        stopVoice();
-      }
-      
-      // IMPORTANT: Temporarily disable CSS un-mirror before capture
-      const originalTransform = video.style.transform;
-      video.style.transform = "none";
-      
-      const canvas = document.createElement("canvas");
-      canvas.width = video.videoWidth || 640;
-      canvas.height = video.videoHeight || 480;
-
-      const ctx = canvas.getContext("2d");
-      ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-      
-      // Restore CSS un-mirror immediately after drawImage
-      video.style.transform = originalTransform || "scaleX(-1)";
-
-      canvas.toBlob(async (blob) => {
-        if (!blob) {
-          return;
-        }
-
-        try {
-          const formData = new FormData();
-          formData.append("image", blob, "selfie.jpg");
-
-          const res = await fetch("/skin-analyze", {
-            method: "POST",
-            body: formData
-          });
-
-          const data = await res.json();
-          console.log("Skin analysis response:", data);
-
-          // Extract scores from response - handle both old and new formats
-          let scores = null;
-          if (data && data.skin_report) {
-            // New format with skin_report
-            scores = data.skin_report;
-          } else if (data && data.analysis) {
-            // Old format - check for nested scores/metrics
-            scores = data.analysis.scores || data.analysis.metrics || data.analysis;
-          }
-
-          // Всегда показываем панель с метриками
-          const uiMetrics = scores && Object.keys(scores).length > 0 ? scores : {
-            acne: 88,
-            redness: 79,
-            oiliness: 83,
-            pore: 87,
-            texture: 92,
-            moisture: 81,
-            radiance: 91
-          };
-          showPanel(uiMetrics);
-          speakSummary(uiMetrics);
-        } catch (err) {
-          console.error("Error analyzing skin:", err);
-        }
-      }, "image/jpeg", 0.92);
-    }
-
-    // DISABLED: Using ElevenLabs voice from backend instead of browser TTS
-    function speakSummary(scores) {
-      // This function is disabled - we now use ElevenLabs audio from backend
-      // which is handled by chatManager.playDermSummaryVoice() in mobile UI
-      console.log('speakSummary called but disabled - using ElevenLabs instead');
-      return;
-    }
-
-    // Set up event listeners
-    closeBtn.addEventListener("click", hidePanel);
-    
-    // Close button for recommendations section is now handled in product-manager.js
-    // when showRecommendations() is called
-    
-    // Check if scanButton exists (for mobile UI) or analyzeSkinBtn (for mirror.html)
-    const scanButton = document.getElementById("scanButton");
-    const analyzeSkinBtn = document.getElementById("analyzeSkinBtn");
-    
-    if (scanButton) {
-      scanButton.addEventListener("click", analyzeSkin);
-    }
-    if (analyzeSkinBtn) {
-      analyzeSkinBtn.addEventListener("click", analyzeSkin);
-    }
-
+    const obs = new MutationObserver(() => scan(document));
+    obs.observe(document.documentElement, { childList: true, subtree: true, characterData: true });
   })();
-  
 </script>
-      
+
 </body>
 </html>
