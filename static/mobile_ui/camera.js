@@ -54,12 +54,15 @@ class CameraManager {
             return true;
         } catch (error) {
             console.error('❌ Camera error:', error);
-            this.showCameraError();
+            // this.showCameraError(); // disabled: no visible camera error UI
             return false;
         }
     }
 
     showCameraError() {
+        // disabled: camera error UI not allowed
+        return;
+
         const preview = document.getElementById("cameraPreview");
         if (!preview) return;
     
@@ -107,4 +110,3 @@ document.addEventListener('visibilitychange', () => {
 });
 
 window.cameraManager = window.cameraManager || new CameraManager();
-
