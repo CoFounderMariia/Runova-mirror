@@ -8,6 +8,5 @@
         <wipe-data />
         <expire-password />
         <encrypted-storage />
-        <disable-camera />
     </uses-policies>
 </device-admin>
